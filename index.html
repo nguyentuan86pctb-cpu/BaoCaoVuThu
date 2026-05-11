@@ -222,8 +222,8 @@ function kiemTraAnCot(tenCot) { return COT_CAN_AN.some(an => tenCot.toLowerCase(
 
 async function taiDuLieuDuNo() {
     try {
-        // Đã đổi BaoCaoTienHai thành BaoCaoVuThu theo cấu hình ở Phương án 1
-        const res = await fetch(`https://raw.githubusercontent.com/nguyentuan86pctb-cpu/BaoCaoVuThu/main/data_duno.json?t=${Date.now()}`);
+        // Đã đổi BaoCaoTienHai thành BaoCaoDonViMoi theo cấu hình ở Phương án 1
+        const res = await fetch(`https://raw.githubusercontent.com/nguyentuan86pctb-cpu/BaoCaoDonViMoi/main/data_duno.json?t=${Date.now()}`);
         if (!res.ok) throw new Error("Chưa có data_duno.json trên Github sếp ơi!");
         const json = await res.json();
         
