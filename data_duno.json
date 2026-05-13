@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "13/05/2026 17:02:48",
-  "tong_so_kh": 431,
+  "cap_nhat_luc": "13/05/2026 17:32:51",
+  "tong_so_kh": 427,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -3220,22 +3220,6 @@
     },
     {
       "Mã Sổ GCS": 2167,
-      "ID hóa đơn": 1763284735.0,
-      "Mã khách hàng": "PA09020217228",
-      "Tên khách hàng": "Nguyễn Khả Dũng",
-      "Địa chỉ khách hàng": " Thôn Vô Ngại, xã Vũ Thư, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "25.713",
-      "Số điện thoại": 984365299.0,
-      "Thu ngân viên": "Thu Tam Quang",
-      "Số CTơ": 2111408679.0,
-      "Số Cột": "1.2",
-      "Tên Trạm": "TBA Vô Ngại Tam Quang"
-    },
-    {
-      "Mã Sổ GCS": 2167,
       "ID hóa đơn": 1763285748.0,
       "Mã khách hàng": "PA09020217287",
       "Tên khách hàng": "Trịnh Thị Oanh",
@@ -3384,7 +3368,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 13 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 12 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
@@ -4067,22 +4051,6 @@
       "Tên Trạm": "TBA Minh Hùng 4 Việt Hùng"
     },
     {
-      "Mã Sổ GCS": 2478,
-      "ID hóa đơn": 1762509057.0,
-      "Mã khách hàng": "PA0902VH00680",
-      "Tên khách hàng": "Nguyễn Thị Thín",
-      "Địa chỉ khách hàng": " Xóm 4, thôn Mỹ Lộc, xã Vạn Xuân, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "180.198",
-      "Số điện thoại": 948198196.0,
-      "Thu ngân viên": "Thu Việt Hùng",
-      "Số CTơ": 2310508800.0,
-      "Số Cột": "1.9",
-      "Tên Trạm": "TBA TÂN PHONG 4 VIỆT HÙNG"
-    },
-    {
       "Mã Sổ GCS": 2481,
       "ID hóa đơn": 1762509843.0,
       "Mã khách hàng": "PA0902VH02778",
@@ -4216,7 +4184,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 23 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 22 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
@@ -4672,22 +4640,6 @@
       "Thu ngân viên": "Thu Việt Thuận",
       "Số CTơ": 20585992.0,
       "Số Cột": "3.3/2.4",
-      "Tên Trạm": "TBA Hợp Long Vũ Việt"
-    },
-    {
-      "Mã Sổ GCS": 2325,
-      "ID hóa đơn": 1764870164.0,
-      "Mã khách hàng": "PA09020329526",
-      "Tên khách hàng": "Hồ Thị Vui",
-      "Địa chỉ khách hàng": " Thôn Hợp Long, xã Thư Vũ, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "444.031",
-      "Số điện thoại": 369016082.0,
-      "Thu ngân viên": "Thu Việt Thuận",
-      "Số CTơ": 20586247.0,
-      "Số Cột": "1.7/1.1",
       "Tên Trạm": "TBA Hợp Long Vũ Việt"
     },
     {
@@ -5331,22 +5283,6 @@
       "Tên Trạm": "TBA Đồng Tiến - Việt Thuận"
     },
     {
-      "Mã Sổ GCS": 2332,
-      "ID hóa đơn": 1764869314.0,
-      "Mã khách hàng": "PA09020216131",
-      "Tên khách hàng": "Lý Văn Nam",
-      "Địa chỉ khách hàng": "  Thôn Việt Cường, xã Thư Vũ, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "630.292",
-      "Số điện thoại": 915122577.0,
-      "Thu ngân viên": "Thu Việt Thuận",
-      "Số CTơ": 20511877.0,
-      "Số Cột": "2.11/1.2",
-      "Tên Trạm": "TBA Đồng Tiến - Việt Thuận"
-    },
-    {
       "Mã Sổ GCS": 2333,
       "ID hóa đơn": 1764866307.0,
       "Mã khách hàng": "PA09020216870",
@@ -5784,7 +5720,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 95 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 93 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
