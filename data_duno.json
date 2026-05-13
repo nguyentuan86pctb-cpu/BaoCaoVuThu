@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "13/05/2026 08:32:54",
-  "tong_so_kh": 552,
+  "cap_nhat_luc": "13/05/2026 09:02:55",
+  "tong_so_kh": 549,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -419,22 +419,6 @@
       "Tên Trạm": "Vũ Vân 2"
     },
     {
-      "Mã Sổ GCS": 2762,
-      "ID hóa đơn": 1764129103.0,
-      "Mã khách hàng": "PA09020341267",
-      "Tên khách hàng": "Ngô Thị Ngọ",
-      "Địa chỉ khách hàng": " Thôn Nhân Bình, Xã Thư Vũ, Tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "859.788",
-      "Số điện thoại": 979070216.0,
-      "Thu ngân viên": "Thu Vũ Vân",
-      "Số CTơ": 2410659948.0,
-      "Số Cột": "2.3/1.8/1.2/1.1",
-      "Tên Trạm": "Vũ Vân 3"
-    },
-    {
       "Mã Sổ GCS": 2763,
       "ID hóa đơn": 1764125627.0,
       "Mã khách hàng": "PA09020341419",
@@ -564,22 +548,6 @@
     },
     {
       "Mã Sổ GCS": 2766,
-      "ID hóa đơn": 1764128024.0,
-      "Mã khách hàng": "PA09020341982",
-      "Tên khách hàng": "Vũ Văn Quốc",
-      "Địa chỉ khách hàng": " Thôn Quang Trung, Xã Thư Vũ, Tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "62.139",
-      "Số điện thoại": 986053552.0,
-      "Thu ngân viên": "Thu Vũ Vân",
-      "Số CTơ": 2410654662.0,
-      "Số Cột": "1.10",
-      "Tên Trạm": "Vũ Vân 8"
-    },
-    {
-      "Mã Sổ GCS": 2766,
       "ID hóa đơn": 1764128049.0,
       "Mã khách hàng": "PA09020342110",
       "Tên khách hàng": "Nguyễn Thị Xuân",
@@ -592,22 +560,6 @@
       "Thu ngân viên": "Thu Vũ Vân",
       "Số CTơ": 2410654854.0,
       "Số Cột": "2.8/1.1",
-      "Tên Trạm": "Vũ Vân 8"
-    },
-    {
-      "Mã Sổ GCS": 2766,
-      "ID hóa đơn": 1764128140.0,
-      "Mã khách hàng": "PA09020342161",
-      "Tên khách hàng": "Vũ Hải Nam",
-      "Địa chỉ khách hàng": " Thôn Quang Trung, Xã Thư Vũ, Tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "89.994",
-      "Số điện thoại": 986053552.0,
-      "Thu ngân viên": "Thu Vũ Vân",
-      "Số CTơ": 2410642723.0,
-      "Số Cột": "1.10",
       "Tên Trạm": "Vũ Vân 8"
     },
     {
@@ -776,7 +728,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 29 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 26 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
