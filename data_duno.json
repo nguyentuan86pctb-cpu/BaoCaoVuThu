@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "14/05/2026 19:02:54",
-  "tong_so_kh": 286,
+  "cap_nhat_luc": "14/05/2026 19:32:55",
+  "tong_so_kh": 283,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -2115,22 +2115,6 @@
       "Tên Trạm": "TBA TRỰC NHO 2 MINH QUANG"
     },
     {
-      "Mã Sổ GCS": 2153,
-      "ID hóa đơn": 1760382053.0,
-      "Mã khách hàng": "PA09020211688",
-      "Tên khách hàng": "Huỳnh Chí Công",
-      "Địa chỉ khách hàng": " Thôn Trực nho, xã Vũ Thư, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "588.200",
-      "Số điện thoại": 335463048.0,
-      "Thu ngân viên": "Thu Minh Quang",
-      "Số CTơ": 2111393434.0,
-      "Số Cột": "1.12/2.2",
-      "Tên Trạm": "TBA Trực Nho Minh quang"
-    },
-    {
       "Mã Sổ GCS": 2155,
       "ID hóa đơn": 1760383874.0,
       "Mã khách hàng": "PA09020212084",
@@ -2168,7 +2152,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 4 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 3 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
@@ -4292,38 +4276,6 @@
     },
     {
       "Mã Sổ GCS": 2280,
-      "ID hóa đơn": 1762470379.0,
-      "Mã khách hàng": "PA09020229557",
-      "Tên khách hàng": "Nguyễn Ngọc Năng",
-      "Địa chỉ khách hàng": " Thôn Hương, xã Vạn Xuân, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "1.037.448",
-      "Số điện thoại": 976610554.0,
-      "Thu ngân viên": "Thu Xuân Hòa",
-      "Số CTơ": 2210276530.0,
-      "Số Cột": "2.12",
-      "Tên Trạm": "TBA THÔN HƯƠNG - XUÂN HÒA"
-    },
-    {
-      "Mã Sổ GCS": 2280,
-      "ID hóa đơn": 1762470996.0,
-      "Mã khách hàng": "PA09020229555",
-      "Tên khách hàng": "Nguyễn Như Thường",
-      "Địa chỉ khách hàng": " Thôn Hương, xã Vạn Xuân, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "85.709",
-      "Số điện thoại": 976610554.0,
-      "Thu ngân viên": "Thu Xuân Hòa",
-      "Số CTơ": 2210442473.0,
-      "Số Cột": "2.12",
-      "Tên Trạm": "TBA THÔN HƯƠNG - XUÂN HÒA"
-    },
-    {
-      "Mã Sổ GCS": 2280,
       "ID hóa đơn": 1762471614.0,
       "Mã khách hàng": "PA09020229582",
       "Tên khách hàng": "Phạm Văn Cao",
@@ -4536,7 +4488,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 15 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 13 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
