@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "14/05/2026 14:02:51",
-  "tong_so_kh": 308,
+  "cap_nhat_luc": "14/05/2026 14:32:53",
+  "tong_so_kh": 306,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -1555,22 +1555,6 @@
       "Tên Trạm": "TBA  Bơm Vũ Nghĩa  Duy Nhất"
     },
     {
-      "Mã Sổ GCS": 2231,
-      "ID hóa đơn": 1762346229.0,
-      "Mã khách hàng": "PA09020233254",
-      "Tên khách hàng": "Phạm Thị Nhung",
-      "Địa chỉ khách hàng": " Thôn Minh Đức, xã Vũ Tiên, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "17.142",
-      "Số điện thoại": 329574157.0,
-      "Thu ngân viên": "Thu Duy Nhất",
-      "Số CTơ": 2110300082.0,
-      "Số Cột": "2.3/2.3",
-      "Tên Trạm": "TBA Minh Đức - Duy Nhất"
-    },
-    {
       "Mã Sổ GCS": 2234,
       "ID hóa đơn": 1762342414.0,
       "Mã khách hàng": "PA09020303850",
@@ -1592,7 +1576,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 7 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 6 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
@@ -2451,28 +2435,12 @@
       "Tên Trạm": "TBA Vô Ngại Tam Quang"
     },
     {
-      "Mã Sổ GCS": 2176,
-      "ID hóa đơn": 1763283738.0,
-      "Mã khách hàng": "PA09020329089",
-      "Tên khách hàng": "Đỗ Đại Lượng",
-      "Địa chỉ khách hàng": "   Thôn Nghĩa Khê, xã Vũ Thư, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "730.665",
-      "Số điện thoại": 966948556.0,
-      "Thu ngân viên": "Thu Tam Quang",
-      "Số CTơ": 2111430683.0,
-      "Số Cột": "2.2/1.9",
-      "Tên Trạm": "TBA Xóm 6 Tam Quang"
-    },
-    {
       "Mã Sổ GCS": "",
       "ID hóa đơn": "",
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 3 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 2 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
