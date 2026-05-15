@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "15/05/2026 11:02:51",
-  "tong_so_kh": 153,
+  "cap_nhat_luc": "15/05/2026 11:32:49",
+  "tong_so_kh": 152,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -1027,28 +1027,12 @@
       "Tên Trạm": ""
     },
     {
-      "Mã Sổ GCS": 2221,
-      "ID hóa đơn": 1762347418.0,
-      "Mã khách hàng": "PA09020307800",
-      "Tên khách hàng": "Trần Thị Giang",
-      "Địa chỉ khách hàng": " Thôn Hành Dũng Nghĩa, xã Vũ Tiên, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "186.840",
-      "Số điện thoại": 393087795.0,
-      "Thu ngân viên": "Thu Duy Nhất",
-      "Số CTơ": 2110298841.0,
-      "Số Cột": "1.7/1.3/1.3",
-      "Tên Trạm": "TBA Hưng Đạo"
-    },
-    {
       "Mã Sổ GCS": "",
       "ID hóa đơn": "",
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 1 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 0 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
