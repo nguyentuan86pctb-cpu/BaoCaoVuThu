@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "15/05/2026 16:02:49",
-  "tong_so_kh": 158,
+  "cap_nhat_luc": "15/05/2026 16:32:50",
+  "tong_so_kh": 155,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -145,22 +145,6 @@
       "Số CTơ": 2046012254.0,
       "Số Cột": 1,
       "Tên Trạm": "CÔNG TY TNHH TÂM TIÊM"
-    },
-    {
-      "Mã Sổ GCS": "0206",
-      "ID hóa đơn": 1766814718.0,
-      "Mã khách hàng": "PA09020200048",
-      "Tên khách hàng": "CÔNG TY CỔ PHẦN VẬT LIỆU XÂY DỰNG VŨ THƯ",
-      "Địa chỉ khách hàng": " Thôn La Điền, Xã Tân Thuận, Tỉnh Hưng Yên, Việt Nam",
-      "Kỳ-tháng/năm": "1-5/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "15-05-2026 00:00:00",
-      "Tổng tiền": "77.558.040",
-      "Số điện thoại": 966159856.0,
-      "Thu ngân viên": "CHUYÊN DÙNG",
-      "Số CTơ": 2510779293.0,
-      "Số Cột": 1,
-      "Tên Trạm": "Trạm Xí Nghiệp Gạch Tự Tân"
     },
     {
       "Mã Sổ GCS": "0206",
@@ -312,7 +296,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 19 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 18 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
@@ -1923,44 +1907,12 @@
       "Tên Trạm": "TBA Song An 2"
     },
     {
-      "Mã Sổ GCS": 2577,
-      "ID hóa đơn": 1764123842.0,
-      "Mã khách hàng": "PA09020301897",
-      "Tên khách hàng": "Văn phòng HĐND và UBND xã Vũ Thư",
-      "Địa chỉ khách hàng": " Thôn An Bình, xã Vũ Thư, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "286.086",
-      "Số điện thoại": 989267435.0,
-      "Thu ngân viên": "Thu Thị trấn",
-      "Số CTơ": 18118351.0,
-      "Số Cột": 3.6,
-      "Tên Trạm": "TBA Chợ Thẫm"
-    },
-    {
-      "Mã Sổ GCS": 2578,
-      "ID hóa đơn": 1764121761.0,
-      "Mã khách hàng": "PA09020318392",
-      "Tên khách hàng": "Thống kê cơ sở Vũ Thư",
-      "Địa chỉ khách hàng": " Thôn Minh Hưng, Xã Vũ Thư, Tỉnh Hưng Yên, Việt Nam",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "634.677",
-      "Số điện thoại": 868565121.0,
-      "Thu ngân viên": "Thu Thị trấn",
-      "Số CTơ": 21279756.0,
-      "Số Cột": 1.5,
-      "Tên Trạm": "TBA Chợ Thẫm 2"
-    },
-    {
       "Mã Sổ GCS": "",
       "ID hóa đơn": "",
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 3 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 1 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
