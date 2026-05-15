@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "15/05/2026 15:02:56",
-  "tong_so_kh": 149,
+  "cap_nhat_luc": "15/05/2026 15:32:50",
+  "tong_so_kh": 147,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -259,28 +259,12 @@
       "Tên Trạm": "Vũ Vân 2"
     },
     {
-      "Mã Sổ GCS": 2767,
-      "ID hóa đơn": 1764125991.0,
-      "Mã khách hàng": "PA09020342273",
-      "Tên khách hàng": "Vũ Thị Quý",
-      "Địa chỉ khách hàng": " Thôn Nhân Bình, Xã Thư Vũ, Tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "213.408",
-      "Số điện thoại": 382309366.0,
-      "Thu ngân viên": "Thu Vũ Vân",
-      "Số CTơ": 2410650870.0,
-      "Số Cột": "1.17",
-      "Tên Trạm": "Vũ Vân 9"
-    },
-    {
       "Mã Sổ GCS": "",
       "ID hóa đơn": "",
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 2 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 1 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
@@ -1859,28 +1843,12 @@
       "Tên Trạm": "TBA Đông An Tự Tân"
     },
     {
-      "Mã Sổ GCS": 2653,
-      "ID hóa đơn": 1763290432.0,
-      "Mã khách hàng": "PA0902VTT1220",
-      "Tên khách hàng": "Trần Duy Nhất",
-      "Địa chỉ khách hàng": " Thôn Phú Lễ, xã Tân Thuận, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "449.172",
-      "Số điện thoại": 353855132.0,
-      "Thu ngân viên": "Thu Tự Tân",
-      "Số CTơ": 2210277813.0,
-      "Số Cột": "1.10/1.1",
-      "Tên Trạm": "TBA Đaị An 2"
-    },
-    {
       "Mã Sổ GCS": "",
       "ID hóa đơn": "",
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 2 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 1 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
