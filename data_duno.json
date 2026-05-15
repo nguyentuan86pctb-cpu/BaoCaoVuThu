@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "15/05/2026 12:02:50",
-  "tong_so_kh": 152,
+  "cap_nhat_luc": "15/05/2026 12:32:51",
+  "tong_so_kh": 151,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -1924,22 +1924,6 @@
     },
     {
       "Mã Sổ GCS": 2474,
-      "ID hóa đơn": 1762510337.0,
-      "Mã khách hàng": "PA09020336375",
-      "Tên khách hàng": "Phạm Văn Thịnh",
-      "Địa chỉ khách hàng": " Xóm 2, thôn Mỹ Bổng, xã Vạn Xuân, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "806.881",
-      "Số điện thoại": 353137868.0,
-      "Thu ngân viên": "Thu Việt Hùng",
-      "Số CTơ": 2110911064.0,
-      "Số Cột": "2.7",
-      "Tên Trạm": "TBA Minh Hùng"
-    },
-    {
-      "Mã Sổ GCS": 2474,
       "ID hóa đơn": 1762510465.0,
       "Mã khách hàng": "PA09020306937",
       "Tên khách hàng": "Phạm Thị Huyền",
@@ -1976,7 +1960,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 4 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 3 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
