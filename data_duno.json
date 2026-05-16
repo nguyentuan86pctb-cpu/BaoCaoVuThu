@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "16/05/2026 08:02:56",
-  "tong_so_kh": 150,
+  "cap_nhat_luc": "16/05/2026 08:32:50",
+  "tong_so_kh": 148,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -33,22 +33,6 @@
       "Số CTơ": 2046013217.0,
       "Số Cột": 1,
       "Tên Trạm": "CÔNG TY TNHH DỆT NHUỘM XUẤT KHẨU THĂNG LONG(T4)"
-    },
-    {
-      "Mã Sổ GCS": "0204A",
-      "ID hóa đơn": 1766652236.0,
-      "Mã khách hàng": "PA09020323851",
-      "Tên khách hàng": "CÔNG TY TNHH VẬT LIỆU GIÀY LUDEN VIỆT NAM",
-      "Địa chỉ khách hàng": "Lô B, cụm Công nghiệp Vũ Thư Xã Vũ Thư, Tỉnh Hưng Yên, Việt Nam",
-      "Kỳ-tháng/năm": "1-5/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "10-05-2026 00:00:00",
-      "Tổng tiền": "154.562.688",
-      "Số điện thoại": 336692177.0,
-      "Thu ngân viên": "CHUYÊN DÙNG",
-      "Số CTơ": 2510779307.0,
-      "Số Cột": 1,
-      "Tên Trạm": "CÔNG TY CỔ PHẦN THƯƠNG MẠI BÔNG SỢI HOÀNG TUẤN"
     },
     {
       "Mã Sổ GCS": "0204B",
@@ -296,7 +280,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 18 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 17 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
@@ -2243,22 +2227,6 @@
       "Tên Trạm": "TBA AS Cự Lâm"
     },
     {
-      "Mã Sổ GCS": 2286,
-      "ID hóa đơn": 1766806913.0,
-      "Mã khách hàng": "PA09020317291",
-      "Tên khách hàng": "Nguyễn Xuân Lương",
-      "Địa chỉ khách hàng": "Thôn Thanh Bản 2, xã Vạn Xuân, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-5/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "15-05-2026 00:00:00",
-      "Tổng tiền": "2.207.627",
-      "Số điện thoại": 382362235.0,
-      "Thu ngân viên": "Thu Xuân Hòa",
-      "Số CTơ": "",
-      "Số Cột": "2.14",
-      "Tên Trạm": "TBA THANH BẢN 3"
-    },
-    {
       "Mã Sổ GCS": 2287,
       "ID hóa đơn": 1762473139.0,
       "Mã khách hàng": "PA09020238248",
@@ -2360,7 +2328,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 10 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 9 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
