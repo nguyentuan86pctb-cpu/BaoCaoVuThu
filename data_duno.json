@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "16/05/2026 11:02:50",
-  "tong_so_kh": 148,
+  "cap_nhat_luc": "16/05/2026 14:02:42",
+  "tong_so_kh": 145,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -196,22 +196,6 @@
     },
     {
       "Mã Sổ GCS": "0206",
-      "ID hóa đơn": 1766814726.0,
-      "Mã khách hàng": "PA09020339036",
-      "Tên khách hàng": "CÔNG TY TNHH THẢO DƯỢC THÁI DƯƠNG GROUP",
-      "Địa chỉ khách hàng": " Thôn Liên Hồng, Xã Tân Thuận, Tỉnh Hưng Yên, Việt Nam",
-      "Kỳ-tháng/năm": "1-5/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "15-05-2026 00:00:00",
-      "Tổng tiền": "56.350.512",
-      "Số điện thoại": 986261555.0,
-      "Thu ngân viên": "CHUYÊN DÙNG",
-      "Số CTơ": 2246003484.0,
-      "Số Cột": 14,
-      "Tên Trạm": "Công ty TNHH Tuân Mạch Linh"
-    },
-    {
-      "Mã Sổ GCS": "0206",
       "ID hóa đơn": 1766814703.0,
       "Mã khách hàng": "PA09020339433",
       "Tên khách hàng": "CÔNG TY TNHH CÔNG NGHIỆP YINRUN (VIỆT NAM)",
@@ -280,7 +264,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 17 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 16 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
@@ -2259,38 +2243,6 @@
       "Tên Trạm": "TBA Thanh Bản 2 Xã Xuân Hòa"
     },
     {
-      "Mã Sổ GCS": 2292,
-      "ID hóa đơn": 1762468341.0,
-      "Mã khách hàng": "PA09020226907",
-      "Tên khách hàng": "Trần Văn Việt",
-      "Địa chỉ khách hàng": "  Thôn Hà Chóc, xã Vạn Xuân, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "127.062",
-      "Số điện thoại": 384463592.0,
-      "Thu ngân viên": "Thu Xuân Hòa",
-      "Số CTơ": 2210528485.0,
-      "Số Cột": "1.10",
-      "Tên Trạm": "TBA HÀ CHÓC 2 "
-    },
-    {
-      "Mã Sổ GCS": 2292,
-      "ID hóa đơn": 1762467475.0,
-      "Mã khách hàng": "PA09020226914",
-      "Tên khách hàng": "Phạm Thị Hà",
-      "Địa chỉ khách hàng": "  Thôn Phương Tảo, xã Vạn Xuân, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "164.700",
-      "Số điện thoại": 384463592.0,
-      "Thu ngân viên": "Thu Xuân Hòa",
-      "Số CTơ": 2210597676.0,
-      "Số Cột": "1.10",
-      "Tên Trạm": "TBA HÀ CHÓC 2 "
-    },
-    {
       "Mã Sổ GCS": 2294,
       "ID hóa đơn": 1762467239.0,
       "Mã khách hàng": "PA09020230781",
@@ -2328,7 +2280,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 9 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 7 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
