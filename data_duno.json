@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "16/05/2026 15:32:38",
-  "tong_so_kh": 137,
+  "cap_nhat_luc": "16/05/2026 16:02:40",
+  "tong_so_kh": 135,
   "du_lieu": [
     {
       "Mã Sổ GCS": 206.0,
@@ -1459,44 +1459,12 @@
       "Tên Trạm": ""
     },
     {
-      "Mã Sổ GCS": 2152.0,
-      "ID hóa đơn": 1760383768.0,
-      "Mã khách hàng": "PA09020212456",
-      "Tên khách hàng": "Hoàng Thị Sách",
-      "Địa chỉ khách hàng": " Thôn Trực nho, xã Vũ Thư, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "40.712",
-      "Số điện thoại": 981181708.0,
-      "Thu ngân viên": "Thu Minh Quang",
-      "Số CTơ": 2111394957.0,
-      "Số Cột": "2.4/1.4",
-      "Tên Trạm": "TBA TRỰC NHO 2 MINH QUANG"
-    },
-    {
-      "Mã Sổ GCS": 2155.0,
-      "ID hóa đơn": 1760383874.0,
-      "Mã khách hàng": "PA09020212084",
-      "Tên khách hàng": "Vũ Văn Lương",
-      "Địa chỉ khách hàng": " Thôn La Uyên, xã Vũ Thư, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "572.011",
-      "Số điện thoại": 362360287.0,
-      "Thu ngân viên": "Thu Minh Quang",
-      "Số CTơ": 2111372643.0,
-      "Số Cột": "1.5/1.6/1.1",
-      "Tên Trạm": "TBA Truyền Thanh(La Uyên) M Quang"
-    },
-    {
       "Mã Sổ GCS": "",
       "ID hóa đơn": "",
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 2 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 0 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
