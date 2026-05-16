@@ -833,6 +833,15 @@ function capNhatTabTongHop() {
     
     let summaryArray = Object.values(summary).sort((a, b) => a.tenTo.localeCompare(b.tenTo));
     
+    // ===== GẮN SỰ KIỆN CLICK CHO NÚT "XEM" — chỉ gắn 1 lần, dùng event delegation =====
+    // (Đặt ở đây để chắc chắn được chạy ngay cả khi DataTable đã tồn tại từ trước)
+    $('#bang-tong-hop').off('click', '.btn-xem-tnv').on('click', '.btn-xem-tnv', function() {
+        const tenTNV = $(this).data('tnv');           // Lấy tên TNV từ thuộc tính data-tnv
+        chuyenTab('du-no');                            // Chuyển sang tab Báo cáo Dư nợ
+        // Đặt giá trị dropdown lọc TNV rồi kích hoạt event change để bảng tự lọc
+        $('#filter-tnv').val(tenTNV).trigger('change');
+    });
+
     if (dataTableTongHop) {
         dataTableTongHop.clear().rows.add(summaryArray).draw();
     } else {
