@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "19/05/2026 22:32:54",
-  "tong_so_kh": 109,
+  "cap_nhat_luc": "19/05/2026 23:02:51",
+  "tong_so_kh": 108,
   "du_lieu": [
     {
       "Mã Sổ GCS": 206.0,
@@ -15,7 +15,7 @@
       "Số điện thoại": 983131997.0,
       "Thu ngân viên": "CHUYÊN DÙNG",
       "Số CTơ": 1732014777.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA BỆNH VIỆN ĐA KHOA HUYỆN VŨ THƯ"
     },
     {
@@ -31,7 +31,7 @@
       "Số điện thoại": 985265492.0,
       "Thu ngân viên": "CHUYÊN DÙNG",
       "Số CTơ": 2046014233.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "CÔNG TY TNHH MAY VIỆT TIẾN THÁI BÌNH"
     },
     {
@@ -47,7 +47,7 @@
       "Số điện thoại": 915145587.0,
       "Thu ngân viên": "CHUYÊN DÙNG",
       "Số CTơ": 2046012254.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "CÔNG TY TNHH TÂM TIÊM"
     },
     {
@@ -63,7 +63,7 @@
       "Số điện thoại": 825791119.0,
       "Thu ngân viên": "CHUYÊN DÙNG",
       "Số CTơ": 20460754.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "Công ty cổ phần tập đoàn Hương Sen"
     },
     {
@@ -79,7 +79,7 @@
       "Số điện thoại": 963152356.0,
       "Thu ngân viên": "CHUYÊN DÙNG",
       "Số CTơ": 2046012478.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "CÔNG TY TNHH QUASTZRON VIỆT NAM"
     },
     {
@@ -95,7 +95,7 @@
       "Số điện thoại": 985962777.0,
       "Thu ngân viên": "CHUYÊN DÙNG",
       "Số CTơ": 2346011520.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "Công ty cổ phần Minh Phát Plastic"
     },
     {
@@ -111,7 +111,7 @@
       "Số điện thoại": 982924628.0,
       "Thu ngân viên": "CHUYÊN DÙNG",
       "Số CTơ": 2411291186.0,
-      "Số Cột": 19,
+      "Số Cột": 19.0,
       "Tên Trạm": "Công ty TNHH Super Victory Thái Bình(T1)"
     },
     {
@@ -127,7 +127,7 @@
       "Số điện thoại": 985265492.0,
       "Thu ngân viên": "CHUYÊN DÙNG",
       "Số CTơ": 2411291114.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "Công ty TNHH may Việt Tiến Thái Bình"
     },
     {
@@ -143,7 +143,7 @@
       "Số điện thoại": 915394888.0,
       "Thu ngân viên": "CHUYÊN DÙNG",
       "Số CTơ": 2411290877.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "Xưởng sản xuất thức ăn & chăn nuôi gia súc gia cầm Trần Thị Miền"
     },
     {
@@ -351,7 +351,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2046013425.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -367,7 +367,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2046013425.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -383,7 +383,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2110350274.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -399,7 +399,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2110351895.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -415,7 +415,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2110353113.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -431,7 +431,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 21279422.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -447,7 +447,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2110350593.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -463,7 +463,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 20688584.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -479,7 +479,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 34154401.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -495,7 +495,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2310336847.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -511,7 +511,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2210280726.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -527,7 +527,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2210277909.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -543,7 +543,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2210277909.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -559,7 +559,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2110672894.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -575,7 +575,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 2110672894.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -607,7 +607,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 1732028541.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -623,7 +623,7 @@
       "Số điện thoại": 372937559.0,
       "Thu ngân viên": "Bơm thủy nông",
       "Số CTơ": 1732028541.0,
-      "Số Cột": 1,
+      "Số Cột": 1.0,
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
@@ -1107,28 +1107,12 @@
       "Tên Trạm": ""
     },
     {
-      "Mã Sổ GCS": 2504.0,
-      "ID hóa đơn": 1763511933.0,
-      "Mã khách hàng": "PA09020339780",
-      "Tên khách hàng": "Trần Thị Loan",
-      "Địa chỉ khách hàng": " Thôn Nguyệt Lãng, xã Vũ Thư, tỉnh Hưng Yên",
-      "Kỳ-tháng/năm": "1-4/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "02-05-2026 00:00:00",
-      "Tổng tiền": "256.392",
-      "Số điện thoại": 386848722.0,
-      "Thu ngân viên": "Thu Minh Khai",
-      "Số CTơ": 19374170.0,
-      "Số Cột": "1.1/1.1",
-      "Tên Trạm": "TBA Nguyệt LÃng Minh Khai"
-    },
-    {
       "Mã Sổ GCS": "",
       "ID hóa đơn": "",
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 1 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 0 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
