@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "19/05/2026 10:02:50",
-  "tong_so_kh": 110,
+  "cap_nhat_luc": "19/05/2026 10:32:51",
+  "tong_so_kh": 109,
   "du_lieu": [
     {
       "Mã Sổ GCS": 206.0,
@@ -1507,28 +1507,12 @@
       "Tên Trạm": ""
     },
     {
-      "Mã Sổ GCS": 2471.0,
-      "ID hóa đơn": 1766647590.0,
-      "Mã khách hàng": "PA09020306872",
-      "Tên khách hàng": "HỢP TÁC XÃ NN TÂN PHONG",
-      "Địa chỉ khách hàng": " Thôn Mỹ Lộc 1, Xã Vạn Xuân, Tỉnh Hưng Yên, Việt Nam",
-      "Kỳ-tháng/năm": "1-5/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "08-05-2026 00:00:00",
-      "Tổng tiền": "77.255",
-      "Số điện thoại": 984096808.0,
-      "Thu ngân viên": "Thu Việt Hùng",
-      "Số CTơ": 20689152.0,
-      "Số Cột": "(2.3).2",
-      "Tên Trạm": "TBA Tân Phong 1"
-    },
-    {
       "Mã Sổ GCS": "",
       "ID hóa đơn": "",
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 1 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 0 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
