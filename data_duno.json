@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "19/05/2026 07:32:49",
-  "tong_so_kh": 112,
+  "cap_nhat_luc": "19/05/2026 08:02:48",
+  "tong_so_kh": 111,
   "du_lieu": [
     {
       "Mã Sổ GCS": 206.0,
@@ -17,22 +17,6 @@
       "Số CTơ": 1732014777.0,
       "Số Cột": 1,
       "Tên Trạm": "TBA BỆNH VIỆN ĐA KHOA HUYỆN VŨ THƯ"
-    },
-    {
-      "Mã Sổ GCS": 206.0,
-      "ID hóa đơn": 1766814722.0,
-      "Mã khách hàng": "PA09020302407",
-      "Tên khách hàng": "Công ty TNHH XD thương mại Sông Trà",
-      "Địa chỉ khách hàng": "Nhà ông Lâm,  Thôn Đông Hạ, Phường Vũ Phúc, Tỉnh Hưng Yên, Việt Nam",
-      "Kỳ-tháng/năm": "1-5/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "15-05-2026 00:00:00",
-      "Tổng tiền": "64.972.400",
-      "Số điện thoại": 904229448.0,
-      "Thu ngân viên": "CHUYÊN DÙNG",
-      "Số CTơ": 2046013808.0,
-      "Số Cột": 1,
-      "Tên Trạm": "Trạm cấp nước sinh hoạt xã Minh Lãng"
     },
     {
       "Mã Sổ GCS": 206.0,
@@ -168,7 +152,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 10 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 9 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
