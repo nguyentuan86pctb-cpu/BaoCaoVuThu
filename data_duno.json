@@ -1,9 +1,281 @@
 {
-  "cap_nhat_luc": "20/05/2026 15:32:51",
-  "tong_so_kh": 106,
+  "cap_nhat_luc": "20/05/2026 16:02:52",
+  "tong_so_kh": 123,
   "du_lieu": [
     {
-      "Mã Sổ GCS": 206.0,
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513847.0,
+      "Mã khách hàng": "PA09020323509",
+      "Tên khách hàng": "CÔNG TY TNHH CREATIVE SOURCE VIỆT NAM",
+      "Địa chỉ khách hàng": "Lô CN 2 và CN3 DT 71.744,3m2 , cụm Công nghiệp Minh Lãng, xã Thư Trì, tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "873.047.511",
+      "Số điện thoại": 977181082.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2046013471.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "CÔNG TY TNHH CREATIVE SOURCE VIỆT NAM"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513857.0,
+      "Mã khách hàng": "PA09020200845",
+      "Tên khách hàng": "CÔNG TY CỔ PHẦN QUỐC TẾ BẢO HƯNG",
+      "Địa chỉ khách hàng": " Cụm Công nghiệp Tân Minh, xã Tân Thuận, tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "223.554.082",
+      "Số điện thoại": 357765582.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 20687524.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "Công ty thực phẩm Đông Đô(T1)"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513841.0,
+      "Mã khách hàng": "PA09020323883",
+      "Tên khách hàng": "Công ty TNHH Dệt nhuộm xuất khẩu Thăng Long",
+      "Địa chỉ khách hàng": " Lô A1 KCN Nguyễn Đức Cảnh, Phường Trần Hưng Đạo,tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "2.303.044.770",
+      "Số điện thoại": 886731999.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2046013217.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "CÔNG TY TNHH DỆT NHUỘM XUẤT KHẨU THĂNG LONG(T4)"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513839.0,
+      "Mã khách hàng": "PA09020307318",
+      "Tên khách hàng": "CÔNG TY TNHH BAO BÌ HƯƠNG SEN",
+      "Địa chỉ khách hàng": "Lô B2 khu công nghiệp Nguyễn Đức Cảnh, đường Nguyễn Doãn Cừ,  Phường Thái Bình, tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "98.431.140",
+      "Số điện thoại": 915959459.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2110156057.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "Công ty TNHH Bao bì Hương Sen"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513843.0,
+      "Mã khách hàng": "PA09020323282",
+      "Tên khách hàng": "CÔNG TY TNHH LEADER WIN SHOES",
+      "Địa chỉ khách hàng": "Nhà ông Sơn,  Thôn Dũng Thượng, Xã Vũ Thư, tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "196.223.645",
+      "Số điện thoại": 829311111.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2046013452.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "CÔNG TY TNHH SẢN XUẤT DỊCH VỤ THƯƠNG MẠI SƠN NGỌC ĐỨC VIỆT"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513855.0,
+      "Mã khách hàng": "PA09020308746",
+      "Tên khách hàng": "Công ty TNHH Kinh doanh thương mại Vĩ Đạt",
+      "Địa chỉ khách hàng": " Thôn Huyền Sỹ, xã Vũ Thư, tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "180.531.504",
+      "Số điện thoại": 984877842.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2046013272.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "Công ty TNHH Phát triển Công nghiệp Hải Hùng(Vĩ Đạt)"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513845.0,
+      "Mã khách hàng": "PA09020323851",
+      "Tên khách hàng": "CÔNG TY TNHH VẬT LIỆU GIÀY LUDEN VIỆT NAM",
+      "Địa chỉ khách hàng": "Lô B, cụm Công nghiệp Vũ Thư Xã Vũ Thư, Tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "204.230.160",
+      "Số điện thoại": 336692177.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2510779307.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "CÔNG TY CỔ PHẦN THƯƠNG MẠI BÔNG SỢI HOÀNG TUẤN"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513837.0,
+      "Mã khách hàng": "PA09020330850",
+      "Tên khách hàng": "Công ty TNHH giày VICTORY Việt Nam",
+      "Địa chỉ khách hàng": "Lô C, Lô D  Cụm công nghiệp, xã Vũ Thư, tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "601.325.878",
+      "Số điện thoại": 913145080.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2046014202.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "CÔNG TY TNHH GIẦY VICTORY VIỆT NAM"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513849.0,
+      "Mã khách hàng": "PA09020308593",
+      "Tên khách hàng": "Công ty trách nhiệm hữu hạn Liên Hạnh",
+      "Địa chỉ khách hàng": "Lô B, diện tích 28.055m2 Cụm công nghiệp, xã Vũ Thư, tỉnh Hưng Yên",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "160.609.068",
+      "Số điện thoại": 914211856.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2046013165.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "Công  Ty TNHH Liên Hạnh(T2)"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513851.0,
+      "Mã khách hàng": "PA09020334767",
+      "Tên khách hàng": "Công ty TNHH Xuất nhập khẩu COYATO",
+      "Địa chỉ khách hàng": "Cụm Công Nghiệp Tân Minh,  Xã Vũ Thư, Tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "294.086.843",
+      "Số điện thoại": 902167880.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 20460407.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "Công ty TNHH xuất nhập khẩu COYATO"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513853.0,
+      "Mã khách hàng": "PA09020337903",
+      "Tên khách hàng": "Công ty cổ phần Quốc tế Phú Quý Packaging",
+      "Địa chỉ khách hàng": " Khu CN1, cụm công nghiệp Tân Minh, xã Vũ Thư, tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "142.404.264",
+      "Số điện thoại": 985894568.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 20460606.0,
+      "Số Cột": 13.0,
+      "Tên Trạm": "Công ty cổ phần Quốc tế Phú Quý PACKAGING(T1)"
+    },
+    {
+      "Mã Sổ GCS": "0204A",
+      "ID hóa đơn": 1767513859.0,
+      "Mã khách hàng": "PA09020349582",
+      "Tên khách hàng": "Công ty cổ phần quốc tế Phú Quý Packaging",
+      "Địa chỉ khách hàng": "  Khu CN 1, cụm công nghiệp Tân Minh, Xã Vũ thư, Tỉnh Hưng Yên, Việt Nam\t",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "110.053.296",
+      "Số điện thoại": 353111276.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2411291144.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "Công ty cổ phần Quốc tế Phú Quý PACKAGING(T2)"
+    },
+    {
+      "Mã Sổ GCS": "0204B",
+      "ID hóa đơn": 1767513835.0,
+      "Mã khách hàng": "PA09020200361",
+      "Tên khách hàng": "Công ty cổ phần Gốm xây dựng Đại Thắng",
+      "Địa chỉ khách hàng": " Lô đất diện tích 77.760,7m2 thôn Nẽ Châu, Xã Vũ Thư, Tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "135.384.219",
+      "Số điện thoại": 913361678.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2411290852.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "Công ty cổ phần xây dựng gốm Đại Thắng"
+    },
+    {
+      "Mã Sổ GCS": "0204B",
+      "ID hóa đơn": 1767513829.0,
+      "Mã khách hàng": "PA09020317828",
+      "Tên khách hàng": "CÔNG TY TNHH MAXPORT LIMITED (VIET NAM)",
+      "Địa chỉ khách hàng": " Số 88 phố Hạ Đình, Phường Khương Đình, TP Hà Nội, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "409.875.660",
+      "Số điện thoại": 913574640.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 20687031.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "Chi nhánh Công ty Cổ phần sản xuất hàng thể thao MAXPORT(T1)"
+    },
+    {
+      "Mã Sổ GCS": "0204B",
+      "ID hóa đơn": 1767513831.0,
+      "Mã khách hàng": "PA09020329186",
+      "Tên khách hàng": "CÔNG TY  CỔ PHẦN SẢN XUẤT HÀNG THỂ THAO-CN THÁI BÌNH",
+      "Địa chỉ khách hàng": " Lô diện tích 86.112,4 m2, khu công nghiệp Nguyễn Đức Cảnh, đường Trần Thái Tông, Phường Trần Hưng Đạo, tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "184.154.104",
+      "Số điện thoại": 364050330.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2110155754.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "TBA TÂN ĐỆ 6"
+    },
+    {
+      "Mã Sổ GCS": "0204B",
+      "ID hóa đơn": 1767513833.0,
+      "Mã khách hàng": "PA09020200504",
+      "Tên khách hàng": "CÔNG TY TRÁCH NHIỆM HỮU HẠN IVORY VIỆT NAM",
+      "Địa chỉ khách hàng": " Km 6+ 500, quốc lộ 10, Xã Vũ Thư, Tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "240.976.355",
+      "Số điện thoại": 983527069.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2046013370.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "Trạm IVORY - T1"
+    },
+    {
+      "Mã Sổ GCS": "0204D",
+      "ID hóa đơn": 1767513827.0,
+      "Mã khách hàng": "PA09020349399",
+      "Tên khách hàng": "CÔNG TY TNHH JEIL JERSEY VINA",
+      "Địa chỉ khách hàng": "Lô đất diện tích 24.433,5 m2, cụm công nghiệp Vũ Hội, Xã Thư Vũ, Tỉnh Hưng Yên, Việt Nam",
+      "Kỳ-tháng/năm": "2-5/2026",
+      "Loại hóa đơn": "TD",
+      "Ngày phát hành": "20-05-2026 00:00:00",
+      "Tổng tiền": "124.829.294",
+      "Số điện thoại": 989045632.0,
+      "Thu ngân viên": "CHUYÊN DÙNG",
+      "Số CTơ": 2411291101.0,
+      "Số Cột": 1.0,
+      "Tên Trạm": "CTy TNHH JEIL JERSEY VINA"
+    },
+    {
+      "Mã Sổ GCS": "0206",
       "ID hóa đơn": 1766814724.0,
       "Mã khách hàng": "PA09020334660",
       "Tên khách hàng": "CÔNG TY TNHH CÔNG NGHỆ MAY MẶC SPECTRE VIỆT NAM",
@@ -19,7 +291,7 @@
       "Tên Trạm": "CÔNG TY TNHH MAY VIỆT TIẾN THÁI BÌNH"
     },
     {
-      "Mã Sổ GCS": 206.0,
+      "Mã Sổ GCS": "0206",
       "ID hóa đơn": 1766814711.0,
       "Mã khách hàng": "PA09020330620",
       "Tên khách hàng": "CÔNG TY TNHH TÂM TIÊM",
@@ -35,7 +307,7 @@
       "Tên Trạm": "CÔNG TY TNHH TÂM TIÊM"
     },
     {
-      "Mã Sổ GCS": 206.0,
+      "Mã Sổ GCS": "0206",
       "ID hóa đơn": 1766814720.0,
       "Mã khách hàng": "PA09020330290",
       "Tên khách hàng": "CÔNG TY TRÁCH NHIỆM HỮU HẠN XHL",
@@ -51,7 +323,7 @@
       "Tên Trạm": "CÔNG TY TNHH QUASTZRON VIỆT NAM"
     },
     {
-      "Mã Sổ GCS": 206.0,
+      "Mã Sổ GCS": "0206",
       "ID hóa đơn": 1766814703.0,
       "Mã khách hàng": "PA09020339433",
       "Tên khách hàng": "CÔNG TY TNHH CÔNG NGHIỆP YINRUN (VIỆT NAM)",
@@ -67,7 +339,7 @@
       "Tên Trạm": "Công ty cổ phần Minh Phát Plastic"
     },
     {
-      "Mã Sổ GCS": 206.0,
+      "Mã Sổ GCS": "0206",
       "ID hóa đơn": 1766814716.0,
       "Mã khách hàng": "PA09020349485",
       "Tên khách hàng": "Công ty TNHH Super Victory Thái Bình",
@@ -83,7 +355,7 @@
       "Tên Trạm": "Công ty TNHH Super Victory Thái Bình(T1)"
     },
     {
-      "Mã Sổ GCS": 206.0,
+      "Mã Sổ GCS": "0206",
       "ID hóa đơn": 1766814707.0,
       "Mã khách hàng": "PA09020349554",
       "Tên khách hàng": "CÔNG TY TNHH CÔNG NGHỆ MAY MẶC SPECTRE VIỆT NAM",
@@ -99,7 +371,7 @@
       "Tên Trạm": "Công ty TNHH may Việt Tiến Thái Bình"
     },
     {
-      "Mã Sổ GCS": 206.0,
+      "Mã Sổ GCS": "0206",
       "ID hóa đơn": 1766814705.0,
       "Mã khách hàng": "PA09020335085",
       "Tên khách hàng": "Trần Thị Miền (Chăn nuôi trang trại)",
@@ -120,7 +392,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 7 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 24 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
@@ -307,7 +579,7 @@
       "Tên Trạm": ""
     },
     {
-      "Mã Sổ GCS": 2172.0,
+      "Mã Sổ GCS": 2172,
       "ID hóa đơn": 1763290401.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -323,7 +595,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2172.0,
+      "Mã Sổ GCS": 2172,
       "ID hóa đơn": 1763290395.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -339,7 +611,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2207.0,
+      "Mã Sổ GCS": 2207,
       "ID hóa đơn": 1762469737.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -355,7 +627,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2234.0,
+      "Mã Sổ GCS": 2234,
       "ID hóa đơn": 1762342408.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -371,7 +643,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2235.0,
+      "Mã Sổ GCS": 2235,
       "ID hóa đơn": 1762342267.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -387,7 +659,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2236.0,
+      "Mã Sổ GCS": 2236,
       "ID hóa đơn": 1762351102.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -403,7 +675,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2237.0,
+      "Mã Sổ GCS": 2237,
       "ID hóa đơn": 1762352168.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -419,7 +691,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2265.0,
+      "Mã Sổ GCS": 2265,
       "ID hóa đơn": 1763662352.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -435,7 +707,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2285.0,
+      "Mã Sổ GCS": 2285,
       "ID hóa đơn": 1762468183.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -451,7 +723,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2320.0,
+      "Mã Sổ GCS": 2320,
       "ID hóa đơn": 1764869493.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -467,7 +739,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2480.0,
+      "Mã Sổ GCS": 2480,
       "ID hóa đơn": 1762509289.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -483,7 +755,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2552.0,
+      "Mã Sổ GCS": 2552,
       "ID hóa đơn": 1763752169.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -499,7 +771,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2552.0,
+      "Mã Sổ GCS": 2552,
       "ID hóa đơn": 1763752157.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -515,7 +787,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2573.0,
+      "Mã Sổ GCS": 2573,
       "ID hóa đơn": 1764123062.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -531,7 +803,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2573.0,
+      "Mã Sổ GCS": 2573,
       "ID hóa đơn": 1764123049.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -547,7 +819,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2768.0,
+      "Mã Sổ GCS": 2768,
       "ID hóa đơn": 1764129970.0,
       "Mã khách hàng": "PA09020342590",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -563,7 +835,7 @@
       "Tên Trạm": "Vũ Vân 10"
     },
     {
-      "Mã Sổ GCS": 2905.0,
+      "Mã Sổ GCS": 2905,
       "ID hóa đơn": 1763286769.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
@@ -579,7 +851,7 @@
       "Tên Trạm": "TBA B ơm Cự Lâm Xuân Hoà"
     },
     {
-      "Mã Sổ GCS": 2905.0,
+      "Mã Sổ GCS": 2905,
       "ID hóa đơn": 1763286773.0,
       "Mã khách hàng": "PA09020200001",
       "Tên khách hàng": "CTTNHH Một thành viên KTCT thủy lợi Nam Thái Bình",
