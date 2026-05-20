@@ -1,23 +1,7 @@
 {
-  "cap_nhat_luc": "20/05/2026 07:32:53",
-  "tong_so_kh": 108,
+  "cap_nhat_luc": "20/05/2026 08:02:52",
+  "tong_so_kh": 107,
   "du_lieu": [
-    {
-      "Mã Sổ GCS": 206.0,
-      "ID hóa đơn": 1766814709.0,
-      "Mã khách hàng": "PA09020331872",
-      "Tên khách hàng": "Bệnh viện đa khoa Vũ Thư",
-      "Địa chỉ khách hàng": " Xã Vũ Thư, Tỉnh Hưng Yên, Việt Nam",
-      "Kỳ-tháng/năm": "1-5/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "15-05-2026 00:00:00",
-      "Tổng tiền": "73.265.144",
-      "Số điện thoại": 983131997.0,
-      "Thu ngân viên": "CHUYÊN DÙNG",
-      "Số CTơ": 1732014777.0,
-      "Số Cột": 1.0,
-      "Tên Trạm": "TBA BỆNH VIỆN ĐA KHOA HUYỆN VŨ THƯ"
-    },
     {
       "Mã Sổ GCS": 206.0,
       "ID hóa đơn": 1766814724.0,
@@ -152,7 +136,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 9 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 8 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
