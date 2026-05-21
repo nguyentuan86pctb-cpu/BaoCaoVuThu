@@ -1,6 +1,6 @@
 {
-  "cap_nhat_luc": "21/05/2026 07:02:54",
-  "tong_so_kh": 123,
+  "cap_nhat_luc": "21/05/2026 07:32:52",
+  "tong_so_kh": 122,
   "du_lieu": [
     {
       "Mã Sổ GCS": "0204A",
@@ -212,22 +212,6 @@
     },
     {
       "Mã Sổ GCS": "0204B",
-      "ID hóa đơn": 1767513829.0,
-      "Mã khách hàng": "PA09020317828",
-      "Tên khách hàng": "CÔNG TY TNHH MAXPORT LIMITED (VIET NAM)",
-      "Địa chỉ khách hàng": " Số 88 phố Hạ Đình, Phường Khương Đình, TP Hà Nội, Việt Nam",
-      "Kỳ-tháng/năm": "2-5/2026",
-      "Loại hóa đơn": "TD",
-      "Ngày phát hành": "20-05-2026 00:00:00",
-      "Tổng tiền": "409.875.660",
-      "Số điện thoại": 913574640.0,
-      "Thu ngân viên": "CHUYÊN DÙNG",
-      "Số CTơ": 20687031.0,
-      "Số Cột": 1.0,
-      "Tên Trạm": "Chi nhánh Công ty Cổ phần sản xuất hàng thể thao MAXPORT(T1)"
-    },
-    {
-      "Mã Sổ GCS": "0204B",
       "ID hóa đơn": 1767513831.0,
       "Mã khách hàng": "PA09020329186",
       "Tên khách hàng": "CÔNG TY  CỔ PHẦN SẢN XUẤT HÀNG THỂ THAO-CN THÁI BÌNH",
@@ -392,7 +376,7 @@
       "Mã khách hàng": "",
       "Tên khách hàng": "",
       "Địa chỉ khách hàng": "",
-      "Kỳ-tháng/năm": "Số hóa đơn: 24 HĐ",
+      "Kỳ-tháng/năm": "Số hóa đơn: 23 HĐ",
       "Loại hóa đơn": "",
       "Ngày phát hành": "",
       "Tổng tiền": "0",
