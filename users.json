@@ -1,0 +1,111 @@
+{
+  "cap_nhat_luc": "23/05/2026 13:49:24",
+  "tong_so": 21,
+  "users": [
+    {
+      "username": "CuongHM",
+      "ho_ten": "Hoàng Mạnh Cường",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "KhuongNM",
+      "ho_ten": "Nguyễn Minh Khương",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "HuyNS",
+      "ho_ten": "Nguyễn Sinh Huy",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "HanhTTH",
+      "ho_ten": "Tô Thị Hồng Hạnh",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "DangNT",
+      "ho_ten": "Nguyễn Thành Đăng",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "DucLM",
+      "ho_ten": "Lê Minh Đức",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "TuyenNN",
+      "ho_ten": "Nguyên Ngọc Tuyên",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "DaoDT",
+      "ho_ten": "Đỗ Thị Đào",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "ThuyNT",
+      "ho_ten": "Nguyễn Thanh Thùy",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "ThaoTTP",
+      "ho_ten": "Trần Thị Phương Thảo",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "HuyenBT",
+      "ho_ten": "Bùi Thị Phương Huyền",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "ThamHTH",
+      "ho_ten": "Hoàng Thị Hồng Thắm",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "HuongVT",
+      "ho_ten": "Vũ Thị Hường",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "HoaVT",
+      "ho_ten": "Vũ Thị Hoa",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "DuyenBT",
+      "ho_ten": "Bùi Thị Duyên",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "DuyenDTK",
+      "ho_ten": "Đỗ Thị Kim Duyên",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "ThaoHT",
+      "ho_ten": "Hoàng Thị Thảo",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "ChienPT",
+      "ho_ten": "Phạm Thị Chiên",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "HanhMTT",
+      "ho_ten": "Mai Thị Thúy Hạnh",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "DungTT",
+      "ho_ten": "Triệu Thị Dung",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    },
+    {
+      "username": "HuongLTT",
+      "ho_ten": "Lê Thị Thanh Hương",
+      "pass_hash": "5e2515de88b53a23493876c346651fa8fbee4deb1b5f82ff3ed1f138e7c0dca8"
+    }
+  ]
+}
