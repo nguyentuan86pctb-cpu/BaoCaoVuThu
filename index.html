@@ -595,6 +595,30 @@ $.fn.dataTable.ext.type.order['natural-desc'] = function (a, b) { return String(
 const COT_CAN_AN = ['địa chỉ', 'dia chi', 'thu ngân', 'thu ngan', 'tnv', 'thu ngân viên', 'kỳ', 'tháng', 'năm', 'kỳ tháng năm', 'ky thang nam', 'loại hóa đơn', 'loai hoa don', 'ngày phát hành', 'ngay phat hanh'];
 function kiemTraAnCot(tenCot) { return COT_CAN_AN.some(an => tenCot.toLowerCase().trim().includes(an)); }
 
+const TEN_THU_NGAN_KHONG_THONG_KE = [
+    "chuyên dùng",
+    "bơm thủy nông"
+];
+
+function chuanHoaTenThuNgan(tenTNV) {
+    return String(tenTNV || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/\u0111/g, 'd')
+        .replace(/\u0110/g, 'd')
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, ' ');
+}
+
+function laThuNganKhongThongKe(tenTNV) {
+    const tenChuan = chuanHoaTenThuNgan(tenTNV);
+    return TEN_THU_NGAN_KHONG_THONG_KE.some(tenLoai => {
+        const tenLoaiChuan = chuanHoaTenThuNgan(tenLoai);
+        return tenChuan === tenLoaiChuan || tenChuan.includes(tenLoaiChuan);
+    });
+}
+
 async function taiDuLieuDuNo() {
     if (!currentUser) return;
     try {
@@ -602,7 +626,7 @@ async function taiDuLieuDuNo() {
         if (!res.ok) throw new Error("Chưa có data_duno.json trên Github sếp ơi!");
         const json = await res.json();
         let rawRecords = json.du_lieu || [];
-        const records = rawRecords.filter(r => {
+        let records = rawRecords.filter(r => {
             let ma = String(r['Mã khách hàng'] || '').trim(); let ten = String(r['Tên khách hàng'] || '').trim();
             if (!ma) return false; 
             if (ten.includes('Ký, họ tên') || ten.includes('Thu ngân viên') || ten.includes('Phòng kinh doanh') || ten.includes('Kế toán')) return false;
@@ -610,9 +634,6 @@ async function taiDuLieuDuNo() {
         });
 
         if (records.length === 0) return;
-        globalRecords = records; 
-        
-        document.getElementById('cap-nhat-luc-duno').innerHTML = `<svg class="w-4 h-4 text-green-600 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Cập nhật lúc: <span class="font-bold text-evnDark ml-1">${json.cap_nhat_luc || '--'}</span>`;
 
         khoiTaoCacheTick();
 
@@ -624,6 +645,17 @@ async function taiDuLieuDuNo() {
         cotSDT_global  = keys.find(k => k.toLowerCase().includes('sdt') || k.toLowerCase().includes('điện thoại') || k.toLowerCase().includes('đt'));
         cotMaKH    = keys.find(k => k.toLowerCase().includes('mã kh') || k.toLowerCase().includes('ma kh'));
         cotTenKH   = keys.find(k => k.toLowerCase().includes('tên kh') || k.toLowerCase().includes('ten kh'));
+
+        if (cotTNV_global) {
+            records = records.filter(r => !laThuNganKhongThongKe(r[cotTNV_global]));
+        }
+        if (records.length === 0) {
+            document.getElementById('cap-nhat-luc-duno').innerHTML = `<span class="text-red-600 font-bold">Không còn dữ liệu sau khi bỏ Chuyên dùng và Bơm thủy nông.</span>`;
+            return;
+        }
+        globalRecords = records;
+
+        document.getElementById('cap-nhat-luc-duno').innerHTML = `<svg class="w-4 h-4 text-green-600 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Cập nhật lúc: <span class="font-bold text-evnDark ml-1">${json.cap_nhat_luc || '--'}</span>`;
 
         if (cotTNV_global) {
             const listTNV = [...new Set(records.map(r => r[cotTNV_global]))].filter(Boolean).sort();
@@ -925,18 +957,13 @@ function setupChuKyIn() {
 }
 
 // =========================================================
-// PHẦN SỬA ĐỔI: TỔNG HỢP NỢ THEO 3 TỔ (VŨ THƯ)
+// PHẦN SỬA ĐỔI: TỔNG HỢP NỢ THEO 2 TỔ SẢN XUẤT (VŨ THƯ)
 // Phân tổ dựa theo MÃ THU NGÂN VIÊN (lấy từ file chia_tổ.txt)
 // =========================================================
 let dataTableTongHop = null;
 
 // 1. Danh sách tên TNV theo từng tổ (lấy đúng từ file chia_tổ.txt, phần tên sau mã số)
 // So khớp không phân biệt hoa/thường, chuẩn hóa khoảng trắng
-const TEN_BOM = [
-    "chuyên dùng",
-    "bơm thủy nông"
-];
-
 const TEN_TO_1 = [
     "thu đồng thanh",
     "thu dũng nghĩa",
@@ -969,21 +996,19 @@ const TEN_TO_2 = [
 
 // 2. Hàm phân loại tổ — so khớp tên TNV (không phân biệt hoa/thường)
 function layTenTo(tenTNV) {
-    if (!tenTNV) return "4. CHƯA PHÂN TỔ / KHÁC";
+    if (!tenTNV) return "";
     // Chuẩn hóa: chữ thường, bỏ khoảng trắng thừa
     let tnvChuan = String(tenTNV).toLowerCase().trim().replace(/\s+/g, ' ');
 
     // Kiểm tra khớp chính xác toàn bộ tên
-    if (TEN_BOM.includes(tnvChuan))  return "1. BƠM + CHUYÊN DÙNG";
-    if (TEN_TO_1.includes(tnvChuan)) return "2. TỔ SẢN XUẤT 1";
-    if (TEN_TO_2.includes(tnvChuan)) return "3. TỔ SẢN XUẤT 2";
+    if (TEN_TO_1.includes(tnvChuan)) return "1. TỔ SẢN XUẤT 1";
+    if (TEN_TO_2.includes(tnvChuan)) return "2. TỔ SẢN XUẤT 2";
 
     // Thử khớp một phần (phòng trường hợp tên có thêm ký tự lạ)
-    if (TEN_BOM.some(t  => tnvChuan.includes(t)))  return "1. BƠM + CHUYÊN DÙNG";
-    if (TEN_TO_1.some(t => tnvChuan.includes(t))) return "2. TỔ SẢN XUẤT 1";
-    if (TEN_TO_2.some(t => tnvChuan.includes(t))) return "3. TỔ SẢN XUẤT 2";
+    if (TEN_TO_1.some(t => tnvChuan.includes(t))) return "1. TỔ SẢN XUẤT 1";
+    if (TEN_TO_2.some(t => tnvChuan.includes(t))) return "2. TỔ SẢN XUẤT 2";
 
-    return "4. CHƯA PHÂN TỔ / KHÁC";
+    return "";
 }
 
 // 3. Hàm cập nhật Tab Tổng hợp (Giống hệt logic file Index)
@@ -997,12 +1022,15 @@ function capNhatTabTongHop() {
         let tnv = row[cotTNV_global] || "Không xác định";
         let tien = parseFloat(String(row[cotTien_global]).replace(/\./g, '').replace(/,/g, '')) || 0;
         
+        let tenTo = layTenTo(tnv);
+        if (!tenTo) return;
+
         if (!summary[tnv]) {
             summary[tnv] = { 
                 tnv: tnv, 
                 soHD: 0, 
                 tongTien: 0, 
-                tenTo: layTenTo(tnv) 
+                tenTo: tenTo 
             };
         }
         summary[tnv].soHD += 1;
