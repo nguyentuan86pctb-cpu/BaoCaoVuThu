@@ -191,7 +191,10 @@ function khoiDongDangNhap() {
 
         @media print {
             body * { visibility: hidden; }
+            html, body { overflow: visible !important; height: auto !important; width: auto !important; max-width: none !important; }
             body { padding-bottom: 0 !important; }
+            body > div, main, section, .glass-card { overflow: visible !important; height: auto !important; width: auto !important; max-width: none !important; min-width: 0 !important; margin: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }
+            main > div { max-width: none !important; width: 100% !important; margin: 0 !important; padding: 0 !important; }
             #vung-in-duno, #vung-in-duno * { visibility: visible; }
             #vung-in-duno { position: absolute; top: 0; left: 0; width: 100%; }
             #bang-duno_wrapper, #bang-in-tb_wrapper { display: none !important; }
@@ -210,8 +213,9 @@ function khoiDongDangNhap() {
             .trang-in-a4 { page-break-after: always; page-break-inside: avoid; width: 100%; height: 190mm; display: flex; flex-direction: row; box-sizing: border-box; font-family: 'Times New Roman', serif; color: #000; overflow: hidden; }
             .trang-in-a4:last-child { page-break-after: auto; }
             .lien-thong-bao { width: 50%; height: 100%; padding: 6mm 10mm 48mm 10mm; display: block; position: relative; font-size: 12px; box-sizing: border-box; overflow: hidden; }
+            .lien-thong-bao > div:last-child > div:first-child { padding-top: 14px !important; box-sizing: border-box; }
             .duong-cat-doc { border-left: 1px dashed #666; margin: 0; flex-shrink: 0; position: relative; align-self: stretch; }
-            .duong-cat-doc::after { content: "✂"; position: absolute; top: 50%; left: -9px; font-size: 18px; color: #666; background: #fff; padding: 5px 0; transform: translateY(-50%); }
+            .duong-cat-doc::after { content: "\2702"; position: absolute; top: 50%; left: -9px; font-size: 18px; color: #666; background: #fff; padding: 5px 0; transform: translateY(-50%); }
         }
         #in-header, #vung-bang-in-tang-hinh, #in-dong-tong { display: none; }
     </style>
@@ -505,7 +509,7 @@ function kiemTraNgayKhoa() {
     let btnMoKhoa = document.getElementById('btn-mo-khoa');
 
     if (btnExcel && btnIn && btnPhatLenhIn && btnMoKhoa) {
-        if (ngayHienTai >= 10 || isDaMoKhoa) {
+        if (ngayHienTai >= 7 || isDaMoKhoa) {
             btnExcel.classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
             btnIn.classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
             btnPhatLenhIn.classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
@@ -520,7 +524,7 @@ function kiemTraNgayKhoa() {
 }
 
 function nhapMatKhauMoKhoa() {
-    let mk = prompt("Chưa đến ngày 10 hàng tháng.\nVui lòng nhập mật khẩu để mở khóa tính năng In và Xuất Excel:");
+    let mk = prompt("Chưa đến ngày 7 hàng tháng.\nVui lòng nhập mật khẩu để mở khóa tính năng In và Xuất Excel:");
     if (mk === MAT_KHAU_IN) {
         isDaMoKhoa = true; kiemTraNgayKhoa(); alert("✅ Mở khóa thành công!");
     } else if (mk !== null) {
@@ -564,9 +568,8 @@ let danhSachTickCache = new Set();
 let dictGhiChu = {};
 
 function khoiTaoCacheTick() {
-    let homNay = new Date().toLocaleDateString('vi-VN');
     let data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    if (data.ngay !== homNay) { data = { ngay: homNay, dsMaKH: [] }; localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
+    // B?n n?ng c?p: gi? tick ?? ??c n? b?n tr?n m?y, kh?ng t? x?a khi sang ng?y m?i.
     danhSachTickCache = new Set(data.dsMaKH || []);
     dictGhiChu = JSON.parse(localStorage.getItem(STORAGE_NOTE_KEY) || '{}');
 }
@@ -593,7 +596,43 @@ $.fn.dataTable.ext.type.order['natural-asc'] = function (a, b) { return String(a
 $.fn.dataTable.ext.type.order['natural-desc'] = function (a, b) { return String(b).localeCompare(String(a), undefined, {numeric: true, sensitivity: 'base'}); };
 
 const COT_CAN_AN = ['địa chỉ', 'dia chi', 'thu ngân', 'thu ngan', 'tnv', 'thu ngân viên', 'kỳ', 'tháng', 'năm', 'kỳ tháng năm', 'ky thang nam', 'loại hóa đơn', 'loai hoa don', 'ngày phát hành', 'ngay phat hanh'];
-function kiemTraAnCot(tenCot) { return COT_CAN_AN.some(an => tenCot.toLowerCase().trim().includes(an)); }
+
+
+
+
+
+function timGiaTriTheoTuKhoa(row, keywords) {
+    if (!row) return '';
+    const keys = Object.keys(row);
+    const tuKhoaChuan = keywords.map(boDauTenCot);
+    const key = keys.find(k => {
+        const kChuan = boDauTenCot(k);
+        return tuKhoaChuan.some(tu => kChuan.includes(tu));
+    });
+    return key ? row[key] : '';
+}
+
+function dinhDangSoDienThoai(value) {
+    let sdt = String(value || '').replace(/\.0$/, '').trim();
+    if (!sdt || sdt === 'NaN' || sdt === 'null' || sdt === '--') return '';
+    if (sdt.length >= 8 && !sdt.startsWith('0')) sdt = '0' + sdt;
+    return sdt;
+}
+
+function layDuLieuBaoCaoZalo(ma, fallback) {
+    const maStr = String(ma || '');
+    const row = (globalRecords || []).find(r => String((cotMaKH && r[cotMaKH]) || timGiaTriTheoTuKhoa(r, ['ma khach hang', 'ma kh'])) === maStr) || {};
+    return {
+        ten: fallback.ten || (cotTenKH ? row[cotTenKH] : '') || timGiaTriTheoTuKhoa(row, ['ten khach hang', 'ten kh']),
+        ma: maStr,
+        soGCS: timGiaTriTheoTuKhoa(row, ['so gcs', 'sogcs', 'so ghi chi so', 'so ghi ch? s?', 'gcs']),
+        sdt: dinhDangSoDienThoai((cotSDT_global ? row[cotSDT_global] : '') || timGiaTriTheoTuKhoa(row, ['so dien thoai', 'dien thoai', 'sdt', 'dt'])),
+        tram: fallback.tram || (cotTram_global ? row[cotTram_global] : '') || timGiaTriTheoTuKhoa(row, ['ten tram', 'tram']),
+        cot: String(fallback.cot || (cotCot_global ? row[cotCot_global] : '') || timGiaTriTheoTuKhoa(row, ['so cot', 'cot'])).replace(/\.0$/, '').trim(),
+        tien: (cotTien_global ? row[cotTien_global] : '') || timGiaTriTheoTuKhoa(row, ['tong tien', 'so tien', 'no']),
+        ghiChu: dictGhiChu[maStr] || ''
+    };
+}
 
 const TEN_THU_NGAN_KHONG_THONG_KE = [
     "chuyên dùng",
@@ -757,9 +796,11 @@ async function taiDuLieuDuNo() {
         });
 
         $('#bang-duno tbody').off('click', '.btn-chia-se').on('click', '.btn-chia-se', function() {
-            let ma = $(this).data('makh'), ten = $(this).data('ten'), tram = $(this).data('tram'), cot = $(this).data('cot'); let note = dictGhiChu[String(ma)] || 'Không có ghi chú gì thêm.';
-            let msg = `[ĐIỆN LỰC VŨ THƯ]\nYêu cầu cập nhật thông tin Khách hàng:\n- Tên KH: ${ten}\n- Mã KH: ${ma}\n- Trạm: ${tram} | Cột: ${cot}\n- Ghi chú/Yêu cầu: ${note}\n\n(Nhờ anh em trên hệ thống kiểm tra và cập nhật giúp)`;
+            let ma = $(this).data('makh');
+            let baoCao = layDuLieuBaoCaoZalo(ma, { ten: $(this).data('ten'), tram: $(this).data('tram'), cot: $(this).data('cot') });
+            let msg = `[\u0110I\u1EC6N L\u1EF0C V\u0168 TH\u01AF]\n- T\u00EAn KH: ${baoCao.ten || ''}\n- M\u00E3 KH: ${baoCao.ma || ''}\n- S\u1ED5 GCS: ${baoCao.soGCS || ''}\n- S\u1ED1 \u0110i\u1EC7n Tho\u1EA1i: ${baoCao.sdt || ''}\n- Tr\u1EA1m: ${baoCao.tram || ''} / C\u1ED9t: ${baoCao.cot || ''}\n- S\u1ED1 Ti\u1EC1n N\u1EE3: ${baoCao.tien || ''}\n- Ghi ch\u00FA: ${baoCao.ghiChu || ''}`;
             let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
             if (navigator.share && isMobile) { navigator.share({ title: 'Cập nhật thông tin KH ' + ten, text: msg }).catch((error) => console.log('Lỗi chia sẻ:', error)); } 
             else { navigator.clipboard.writeText(msg).then(() => { alert('✅ ĐÃ COPY NỘI DUNG BÁO CÁO!\n\nHệ thống sẽ mở app Zalo trên máy tính. Sếp chỉ cần chọn người/nhóm và bấm Dán (Ctrl+V) nhé.'); window.location.href = "zalo://"; }).catch(err => { alert('Lỗi Copy. Sếp copy thủ công nhé!'); }); }
         });
@@ -867,15 +908,71 @@ function locTienIn(nguong, btn) {
 
 function xuatExcelTheoDieuKien() { if (!dataTableDuNo) { alert('Chưa có dữ liệu sếp ơi!'); return; } const tenTNV = $('#filter-tnv').val() || 'TatCa'; const tenFile = `DuNo_VuThu_${tenTNV.replace(/\s+/g, '_')}_${new Date().toLocaleDateString('vi-VN').replace(/\//g, '-')}.xlsx`; const rows = dataTableDuNo.rows({ search: 'applied' }).data().toArray(); if (rows.length === 0) { alert('Không có dữ liệu để xuất!'); return; } const dsKeyXuat = mangCotHoanChinh.filter(k => !kiemTraAnCot(k)); const duLieuXuat = []; duLieuXuat.push(dsKeyXuat.map(k => k.toUpperCase())); rows.forEach(row => { duLieuXuat.push(dsKeyXuat.map(k => { let val = row[k]; return (val !== null && val !== undefined) ? val : ''; })); }); try { const wb = XLSX.utils.book_new(); const ws = XLSX.utils.aoa_to_sheet(duLieuXuat); XLSX.utils.book_append_sheet(wb, ws, 'DuNo'); XLSX.writeFile(wb, tenFile); } catch (error) { console.error("Lỗi Excel: ", error); alert("Sếp ơi, quá trình xuất Excel bị lỗi. Sếp thử tải lại trang (F5) nhé!"); } }
 
+
+function boDauTenCot(value) {
+    return String(value || '')
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .replace(/đ/g, 'd')
+        .replace(/Đ/g, 'D')
+        .toLowerCase()
+        .trim();
+}
+
+function timCotTheoTuKhoa(keys, keywords) {
+    const tuKhoaChuan = keywords.map(boDauTenCot);
+    return keys.find(k => {
+        const kChuan = boDauTenCot(k);
+        return tuKhoaChuan.some(tu => kChuan.includes(tu));
+    });
+}
+
+function docGiaTriTheoCot(row, keywords) {
+    const key = timCotTheoTuKhoa(Object.keys(row || {}), keywords);
+    return key ? row[key] : '';
+}
+
+function kiemTraAnCot(tenCot) {
+    const tenCotChuan = boDauTenCot(tenCot);
+    return COT_CAN_AN.some(an => tenCotChuan.includes(boDauTenCot(an)));
+}
+
 function inBaoCaoDuNo() {
     if (!dataTableDuNo) { alert('Chưa có dữ liệu sếp ơi!'); return; }
-    const tenTNV = $('#filter-tnv option:selected').text(); const subtitle = (tenTNV && tenTNV !== '-- Chọn Thu ngân viên --') ? `Thu ngân viên: ${tenTNV}` : 'Tất cả Thu ngân viên';
-    document.getElementById('in-subtitle').textContent = subtitle; document.getElementById('in-ngay').textContent = `Ngày in: ${new Date().toLocaleDateString('vi-VN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`;
-    const allFilteredRows = dataTableDuNo.rows({ search: 'applied' }).data().toArray(); if (allFilteredRows.length === 0) { alert('Không có dữ liệu để in!'); return; }
-    let tongSoTien = 0; const dsKeyIn = mangCotHoanChinh.filter(k => !kiemTraAnCot(k));
-    let htmlBangIn = `<table><thead><tr><th style="width: 25px; text-align: center;">STT</th>`; dsKeyIn.forEach(k => { htmlBangIn += `<th>${k.toUpperCase()}</th>`; }); htmlBangIn += `</tr></thead><tbody>`;
-    allFilteredRows.forEach((row, index) => { if (cotTien_global && row[cotTien_global]) tongSoTien += parseFloat(String(row[cotTien_global]).replace(/\./g, '').replace(/,/g, '')) || 0; htmlBangIn += `<tr><td style="text-align: center;">${index + 1}</td>`; dsKeyIn.forEach(k => { let val = row[k] !== null && row[k] !== undefined ? row[k] : ''; let style = (k === cotTien_global) ? ' style="text-align: right; font-weight: bold;"' : ''; htmlBangIn += `<td${style}>${val}</td>`; }); htmlBangIn += `</tr>`; });
-    htmlBangIn += `</tbody></table>`; document.getElementById('vung-bang-in-tang-hinh').innerHTML = htmlBangIn; document.getElementById('in-tong-hoa-don').textContent = new Intl.NumberFormat('vi-VN').format(allFilteredRows.length); document.getElementById('in-tong-tien').textContent = new Intl.NumberFormat('vi-VN').format(tongSoTien) + ' đ'; window.print();
+    const tenTNV = $('#filter-tnv option:selected').text(); 
+    const subtitle = (tenTNV && tenTNV !== '-- Chọn Thu ngân viên --') ? `Thu ngân viên: ${tenTNV}` : 'Tất cả Thu ngân viên';
+    
+    document.getElementById('in-subtitle').textContent = subtitle; 
+    document.getElementById('in-ngay').textContent = `Ngày in: ${new Date().toLocaleDateString('vi-VN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`;
+    
+    const allFilteredRows = dataTableDuNo.rows({ search: 'applied' }).data().toArray(); 
+    if (allFilteredRows.length === 0) { alert('Không có dữ liệu để in!'); return; }
+    
+    let tongSoTien = 0; 
+    const dsKeyIn = mangCotHoanChinh.filter(k => !kiemTraAnCot(k));
+    
+    let htmlBangIn = `<table><thead><tr><th style="width: 25px; text-align: center;">STT</th>`; 
+    dsKeyIn.forEach(k => { htmlBangIn += `<th>${k.toUpperCase()}</th>`; }); 
+    htmlBangIn += `</tr></thead><tbody>`;
+    
+    allFilteredRows.forEach((row, index) => { 
+        if (cotTien_global && row[cotTien_global]) {
+            tongSoTien += parseFloat(String(row[cotTien_global]).replace(/\./g, '').replace(/,/g, '')) || 0; 
+        }
+        htmlBangIn += `<tr><td style="text-align: center;">${index + 1}</td>`; 
+        dsKeyIn.forEach(k => { 
+            let val = row[k] !== null && row[k] !== undefined ? row[k] : ''; 
+            let style = (k === cotTien_global) ? ' style="text-align: right; font-weight: bold;"' : ''; 
+            htmlBangIn += `<td${style}>${val}</td>`; 
+        }); 
+        htmlBangIn += `</tr>`; 
+    });
+    
+    htmlBangIn += `</tbody></table>`; 
+    document.getElementById('vung-bang-in-tang-hinh').innerHTML = htmlBangIn; 
+    document.getElementById('in-tong-hoa-don').textContent = new Intl.NumberFormat('vi-VN').format(allFilteredRows.length); 
+    document.getElementById('in-tong-tien').textContent = new Intl.NumberFormat('vi-VN').format(tongSoTien) + ' đ'; 
+    window.print();
 }
 
 function taoFormLien(tenLien, ngayIn, data) {
@@ -887,30 +984,34 @@ function inThongBaoTienDien() {
     
     let recordsToPrint = [];
     
-    dataTableInTB.$('.chk-in-no:checked').each(function() {
-        let tr = $(this).closest('tr');
-        let rowData = dataTableInTB.row(tr).data();
-        recordsToPrint.push(rowData);
+    dataTableInTB.rows({ search: 'applied' }).every(function() {
+        let rowNode = this.node();
+        let chk = rowNode ? $(rowNode).find('.chk-in-no') : $();
+        if (chk.length && chk.is(':checked')) {
+            recordsToPrint.push(this.data());
+        }
     });
     
     if (recordsToPrint.length === 0) { 
-        alert("Sếp chưa tick chọn khách hàng nào ở cột CHỌN IN để in ạ!"); 
+        alert("Sếp chưa tích chọn khách hàng nào ở cột CHỌN IN để in ạ!"); 
         return; 
     }
 
+    // Lấy thông tin từ giao diện
     let nguoiGui = document.getElementById('input-nguoi-gui').value.trim();
     let lanhDao = document.getElementById('select-lanh-dao').value;
     let tieuDeLanhDao = (lanhDao === "Hoàng Mạnh Cường") 
                         ? "TRƯỞNG ĐIỆN LỰC" 
                         : "KT.TRƯỞNG ĐIỆN LỰC<br>PHÓ TRƯỞNG ĐIỆN LỰC";
 
+    // Xử lý Ngày In, Ngày Hết Hạn và Ngày Cắt
     let valNgayIn = document.getElementById('input-ngay-in').value;
     let valNgayHetHan = document.getElementById('input-ngay-het-han').value;
     let valNgayCat = document.getElementById('input-ngay-cat').value;
     
-    let dateIn = valNgayIn ? new Date(valNgayIn) : new Date(); 
-    let dateHetHan = valNgayHetHan ? new Date(valNgayHetHan) : new Date(dateIn.getTime()); 
-    let dateCat = valNgayCat ? new Date(valNgayCat) : new Date(dateIn.getTime() + 86400000); 
+    let dateIn = valNgayIn ? new Date(valNgayIn) : new Date(); // Mặc định là hôm nay
+    let dateHetHan = valNgayHetHan ? new Date(valNgayHetHan) : new Date(dateIn.getTime()); // Mặc định bằng ngày in
+    let dateCat = valNgayCat ? new Date(valNgayCat) : new Date(dateIn.getTime() + 86400000); // Mặc định cộng thêm 1 ngày so với ngày in
     
     let strNgayIn = `ngày <span style="font-weight:bold;">${dateIn.getDate().toString().padStart(2,'0')}</span> tháng <span style="font-weight:bold;">${dateIn.getMonth() + 1}</span> năm <span style="font-weight:bold;">${dateIn.getFullYear()}</span>`;
     let strNgayHetHan = `ngày <span style="font-weight:bold;">${dateHetHan.getDate().toString().padStart(2,'0')}</span> tháng <span style="font-weight:bold;">${dateHetHan.getMonth() + 1}</span> năm <span style="font-weight:bold;">${dateHetHan.getFullYear()}</span>`;
@@ -920,27 +1021,45 @@ function inThongBaoTienDien() {
     
     recordsToPrint.forEach(rowData => { 
         let cleanSo = (val) => val ? String(val).replace(/\.0$/, '').trim() : ''; 
-        let rawSdt = rowData['Sô điện thoại'] || rowData['Số điện thoại']; 
+        let rawSdt = cotSDT_global ? rowData[cotSDT_global] : docGiaTriTheoCot(rowData, ['so dien thoai', 'dien thoai', 'sdt', 'dt']); 
         let sdtClean = rawSdt ? String(rawSdt).replace(/\.0$/, '').trim() : ''; 
-        if (sdtClean && sdtClean !== 'NaN' && sdtClean !== 'null') { if (!sdtClean.startsWith('0')) sdtClean = '0' + sdtClean; } else { sdtClean = 'Chưa có SĐT'; } 
+        if (sdtClean && sdtClean !== 'NaN' && sdtClean !== 'null') { 
+            if (!sdtClean.startsWith('0')) sdtClean = '0' + sdtClean; 
+        } else { 
+            sdtClean = 'Chưa có SĐT'; 
+        }
         
         let pData = { 
-            ten: rowData['Tên khách hàng'] || '--', maKH: rowData['Mã khách hàng'] || '--', diaChi: rowData['Địa chỉ khách hàng'] || '--', 
-            tram: rowData['Tên Trạm'] || '--', cot: cleanSo(rowData['Sô Cột'] || rowData['Số Cột']) || '--', cto: cleanSo(rowData['Sô CTơ'] || rowData['Số CTơ']) || '--', 
-            sdt: sdtClean, tien: rowData['Tổng tiền'] || '0',
-            nguoiGui: nguoiGui, lanhDao: lanhDao, tieuDeLanhDao: tieuDeLanhDao,
+            ten: (cotTenKH ? rowData[cotTenKH] : docGiaTriTheoCot(rowData, ['ten khach hang', 'ten kh'])) || '--',
+            maKH: (cotMaKH ? rowData[cotMaKH] : docGiaTriTheoCot(rowData, ['ma khach hang', 'ma kh'])) || '--',
+            diaChi: docGiaTriTheoCot(rowData, ['dia chi khach hang', 'dia chi']) || '--', 
+            tram: (cotTram_global ? rowData[cotTram_global] : docGiaTriTheoCot(rowData, ['ten tram', 'tram'])) || '--',
+            cot: cleanSo(cotCot_global ? rowData[cotCot_global] : docGiaTriTheoCot(rowData, ['so cot', 'cot'])) || '--',
+            cto: cleanSo(docGiaTriTheoCot(rowData, ['so cto', 'so cong to', 'cto'])) || '--', 
+            sdt: sdtClean, 
+            tien: (cotTien_global ? rowData[cotTien_global] : docGiaTriTheoCot(rowData, ['tong tien', 'so tien', 'no'])) || '0',
+            nguoiGui: nguoiGui, 
+            lanhDao: lanhDao, 
+            tieuDeLanhDao: tieuDeLanhDao,
             ngayCat: strNgayCat,
             ngayHetHan: strNgayHetHan
         }; 
         
-        htmlInAll += `<div class="trang-in-a4">${taoFormLien('Liên 2: Lưu Điện lực Vũ Thư', strNgayIn, pData)}<div class="duong-cat-doc"></div>${taoFormLien('Liên 1: Giao Khách Hàng', strNgayIn, pData)}</div>`; 
+        htmlInAll += `
+            <div class="trang-in-a4">
+                ${taoFormLien('Liên 2: Lưu Điện lực Vũ Thư', strNgayIn, pData)}
+                <div class="duong-cat-doc"></div>
+                ${taoFormLien('Liên 1: Giao Khách Hàng', strNgayIn, pData)}
+            </div>`; 
     });
     
-    document.getElementById('vung-in-thong-bao').innerHTML = htmlInAll; document.body.classList.add('dang-in-thong-bao'); 
+    document.getElementById('vung-in-thong-bao').innerHTML = htmlInAll; 
+    document.body.classList.add('dang-in-thong-bao'); 
     window.print(); 
     
     setTimeout(() => { 
         document.body.classList.remove('dang-in-thong-bao'); 
+        // Tự động bỏ tích chọn in sau khi tắt cửa sổ in
         dataTableInTB.$('.chk-in-no:checked').prop('checked', false).trigger('change');
         $('#chk-master-in').prop('checked', false);
     }, 1000);
