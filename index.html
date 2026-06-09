@@ -588,14 +588,15 @@ function luuGhiChu(maKH, noteText) {
 }
 
 let dataTableDuNo = null;  
-let cotTNV_global = null, cotTien_global = null, cotTram_global = null, cotCot_global = null, cotSDT_global = null;
+let cotTNV_global = null, cotTien_global = null, cotTram_global = null, cotCot_global = null, cotSDT_global = null, cotDiaChi_global = null;
 let cotMaKH = null, cotTenKH = null;
 let nguongLocTien = 0; let mangCotHoanChinh = []; 
 
 $.fn.dataTable.ext.type.order['natural-asc'] = function (a, b) { return String(a).localeCompare(String(b), undefined, {numeric: true, sensitivity: 'base'}); };
 $.fn.dataTable.ext.type.order['natural-desc'] = function (a, b) { return String(b).localeCompare(String(a), undefined, {numeric: true, sensitivity: 'base'}); };
 
-const COT_CAN_AN = ['địa chỉ', 'dia chi', 'thu ngân', 'thu ngan', 'tnv', 'thu ngân viên', 'kỳ', 'tháng', 'năm', 'kỳ tháng năm', 'ky thang nam', 'loại hóa đơn', 'loai hoa don', 'ngày phát hành', 'ngay phat hanh'];
+const COT_CAN_AN = ['thu ngân', 'thu ngan', 'tnv', 'thu ngân viên', 'kỳ', 'tháng', 'năm', 'kỳ tháng năm', 'ky thang nam', 'loại hóa đơn', 'loai hoa don', 'ngày phát hành', 'ngay phat hanh'];
+const COT_CAN_AN_KHI_IN_BAO_CAO = ['địa chỉ', 'dia chi', ...COT_CAN_AN];
 
 
 
@@ -682,6 +683,7 @@ async function taiDuLieuDuNo() {
         cotTram_global = keys.find(k => k.toLowerCase().includes('trạm') || k.toLowerCase().includes('tram'));
         cotCot_global  = keys.find(k => k.toLowerCase().includes('cột') || k.toLowerCase().includes('cot'));
         cotSDT_global  = keys.find(k => k.toLowerCase().includes('sdt') || k.toLowerCase().includes('điện thoại') || k.toLowerCase().includes('đt'));
+        cotDiaChi_global = timCotTheoTuKhoa(keys, ['dia chi khach hang', 'dia chi']);
         cotMaKH    = keys.find(k => k.toLowerCase().includes('mã kh') || k.toLowerCase().includes('ma kh'));
         cotTenKH   = keys.find(k => k.toLowerCase().includes('tên kh') || k.toLowerCase().includes('ten kh'));
 
@@ -726,8 +728,9 @@ async function taiDuLieuDuNo() {
                 render: function(data, type, row) {
                     let ten = cotTenKH && row[cotTenKH] ? row[cotTenKH] : '--';
                     if (type === 'display') {
-                        let ma = cotMaKH && row[cotMaKH] ? row[cotMaKH] : '--'; let tram = cotTram_global && row[cotTram_global] ? row[cotTram_global] : '--'; let cot = cotCot_global && row[cotCot_global] ? String(row[cotCot_global]).replace(/\.0$/, '').trim() : '--'; let myNote = dictGhiChu[String(ma)] || ''; let noteHtml = myNote ? `<div class="text-[11px] bg-red-600 text-white px-2 py-0.5 rounded inline-block mt-1 border border-red-700 shadow-sm font-bold">📝 ${myNote}</div>` : '';
-                        return `<div class="text-evnDark font-bold text-[16px] md:text-[18px] leading-snug whitespace-normal max-w-[200px] md:max-w-xs">${ten}</div><div class="text-[11px] md:text-[12px] text-slate-500 mt-1 whitespace-normal">Mã: <span class="font-semibold text-slate-700">${ma}</span> <span class="mx-1">|</span> Trạm: <span class="font-semibold text-evnBlue">${tram}</span> <span class="mx-1">|</span> Cột: <span class="font-semibold text-slate-700">${cot}</span></div>${noteHtml}`;
+                        let ma = cotMaKH && row[cotMaKH] ? row[cotMaKH] : '--'; let tram = cotTram_global && row[cotTram_global] ? row[cotTram_global] : '--'; let cot = cotCot_global && row[cotCot_global] ? String(row[cotCot_global]).replace(/\.0$/, '').trim() : '--'; let diaChi = (cotDiaChi_global && row[cotDiaChi_global]) ? row[cotDiaChi_global] : docGiaTriTheoCot(row, ['dia chi khach hang', 'dia chi']); let myNote = dictGhiChu[String(ma)] || ''; let noteHtml = myNote ? `<div class="text-[11px] bg-red-600 text-white px-2 py-0.5 rounded inline-block mt-1 border border-red-700 shadow-sm font-bold">📝 ${myNote}</div>` : '';
+                        let diaChiHtml = diaChi ? `<div class="mt-1 text-[11px] md:text-[12px] leading-snug text-slate-600 whitespace-normal max-w-[260px] md:max-w-[460px]"><span class="font-bold text-slate-500">Địa chỉ:</span> <span class="font-semibold text-slate-700">${diaChi}</span></div>` : `<div class="mt-1 text-[11px] text-slate-400 italic">Chưa có địa chỉ</div>`;
+                        return `<div class="text-evnDark font-bold text-[16px] md:text-[18px] leading-snug whitespace-normal max-w-[260px] md:max-w-[460px]">${ten}</div><div class="text-[11px] md:text-[12px] text-slate-500 mt-1 whitespace-normal">Mã: <span class="font-semibold text-slate-700">${ma}</span> <span class="mx-1">|</span> Trạm: <span class="font-semibold text-evnBlue">${tram}</span> <span class="mx-1">|</span> Cột: <span class="font-semibold text-slate-700">${cot}</span></div>${diaChiHtml}${noteHtml}`;
                     }
                     return ten; 
                 }
@@ -782,7 +785,7 @@ async function taiDuLieuDuNo() {
             let tr = $(this).closest('tr'); let row = dataTableDuNo.row(tr);
             if (row.child.isShown()) { row.child.hide(); tr.removeClass('bg-blue-50/50'); $(this).html(`<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg> XEM`); $(this).removeClass('bg-evnBlue text-white').addClass('bg-white text-evnBlue'); } 
             else {
-                let data = row.data(); let cacCotDaCoTruocMat = [cotTenKH, cotMaKH, cotTram_global, cotTien_global, cotSDT_global]; let dsCotHienChiTiet = keys.filter(k => !cacCotDaCoTruocMat.includes(k) && !kiemTraAnCot(k)); 
+                let data = row.data(); let cacCotDaCoTruocMat = [cotTenKH, cotMaKH, cotTram_global, cotTien_global, cotSDT_global, cotDiaChi_global]; let dsCotHienChiTiet = keys.filter(k => !cacCotDaCoTruocMat.includes(k) && !kiemTraAnCot(k)); 
                 let detailHtml = '<div class="p-3 bg-gradient-to-r from-blue-50 to-slate-50 border-y border-blue-200 shadow-inner grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">';
                 dsCotHienChiTiet.forEach(k => { let val = data[k] !== null && data[k] !== undefined && data[k] !== '' ? data[k] : '--'; detailHtml += `<div class="flex justify-between items-center border-b border-blue-100/50 pb-1"><span class="font-bold text-slate-500 uppercase">${k}:</span><span class="text-evnDark font-semibold text-right">${val}</span></div>`; });
                 detailHtml += `<div class="col-span-full flex flex-col md:flex-row gap-3 mt-3 pt-3 border-t border-blue-300"><button class="btn-ghi-chu flex-1 bg-red-100 hover:bg-red-200 border border-red-400 text-red-800 font-bold py-2 rounded-lg shadow-sm text-xs md:text-sm transition-colors flex justify-center items-center gap-1" data-makh="${data[cotMaKH]}">📝 Ghi chú khách hàng</button><button class="btn-chia-se flex-1 bg-blue-100 hover:bg-blue-200 border border-blue-400 text-blue-800 font-bold py-2 rounded-lg shadow-sm text-xs md:text-sm transition-colors flex justify-center items-center gap-1" data-makh="${data[cotMaKH]}" data-ten="${data[cotTenKH]}" data-tram="${data[cotTram_global]}" data-cot="${data[cotCot_global]}">📤 Báo cáo Zalo / Tổ đội</button></div></div>`;
@@ -940,6 +943,11 @@ function kiemTraAnCot(tenCot) {
     return COT_CAN_AN.some(an => tenCotChuan.includes(boDauTenCot(an)));
 }
 
+function kiemTraAnCotKhiInBaoCao(tenCot) {
+    const tenCotChuan = boDauTenCot(tenCot);
+    return COT_CAN_AN_KHI_IN_BAO_CAO.some(an => tenCotChuan.includes(boDauTenCot(an)));
+}
+
 function inBaoCaoDuNo() {
     if (!dataTableDuNo) { alert('Chưa có dữ liệu sếp ơi!'); return; }
     const tenTNV = $('#filter-tnv option:selected').text(); 
@@ -952,7 +960,7 @@ function inBaoCaoDuNo() {
     if (allFilteredRows.length === 0) { alert('Không có dữ liệu để in!'); return; }
     
     let tongSoTien = 0; 
-    const dsKeyIn = mangCotHoanChinh.filter(k => !kiemTraAnCot(k));
+    const dsKeyIn = mangCotHoanChinh.filter(k => !kiemTraAnCotKhiInBaoCao(k));
     
     let htmlBangIn = `<table><thead><tr><th style="width: 25px; text-align: center;">STT</th>`; 
     dsKeyIn.forEach(k => { htmlBangIn += `<th>${k.toUpperCase()}</th>`; }); 
