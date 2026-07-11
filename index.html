@@ -661,9 +661,9 @@ function laThuNganKhongThongKe(tenTNV) {
 async function taiJsonDuNo() {
     const stamp = Date.now();
     const urls = [
-        `/data_duno.json?t=${stamp}`,
-        `https://cdn.jsdelivr.net/gh/nguyentuan86pctb-cpu/BaoCaoVuThu@main/data_duno.json?t=${stamp}`,
-        `https://raw.githubusercontent.com/nguyentuan86pctb-cpu/BaoCaoVuThu/main/data_duno.json?t=${stamp}`
+        // Luon doc du lieu moi tu GitHub, khong lay file data tren Vercel.
+        `https://raw.githubusercontent.com/nguyentuan86pctb-cpu/BaoCaoVuThu/main/data_duno.json?t=${stamp}`,
+        `https://cdn.jsdelivr.net/gh/nguyentuan86pctb-cpu/BaoCaoVuThu@main/data_duno.json?t=${stamp}`
     ];
     let lastError = '';
 
@@ -1232,7 +1232,11 @@ function capNhatTabTongHop() {
 }
 // Khởi chạy ngay khi mở web
 setupChuKyIn();
-khoiDongDangNhap(); 
+khoiDongDangNhap();
+// Kiem tra nguon GitHub moi 30 phut; giao dien dang mo se tu tai lai du lieu.
+setInterval(() => {
+    if (currentUser && !document.hidden) taiDuLieuDuNo();
+}, 30 * 60 * 1000);
 // Đã tắt chế độ tự động load mỗi 60 giây: setInterval(taiDuLieuDuNo, 60000);
 kiemTraNgayKhoa();
 </script>
