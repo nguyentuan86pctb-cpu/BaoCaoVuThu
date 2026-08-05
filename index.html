@@ -634,9 +634,13 @@ function layDuLieuBaoCaoZalo(ma, fallback) {
     };
 }
 
-const TEN_THU_NGAN_KHONG_THONG_KE = [
+const DINH_DANH_THU_CHUYEN_DUNG = [
+    "970000026",
     "chuyên dùng",
-    "bơm thủy nông"
+    "970998001",
+    "bơm thủy nông",
+    "970998004",
+    "untuncck"
 ];
 
 function chuanHoaTenThuNgan(tenTNV) {
@@ -650,11 +654,11 @@ function chuanHoaTenThuNgan(tenTNV) {
         .replace(/\s+/g, ' ');
 }
 
-function laThuNganKhongThongKe(tenTNV) {
+function laThuChuyenDung(tenTNV) {
     const tenChuan = chuanHoaTenThuNgan(tenTNV);
-    return TEN_THU_NGAN_KHONG_THONG_KE.some(tenLoai => {
-        const tenLoaiChuan = chuanHoaTenThuNgan(tenLoai);
-        return tenChuan === tenLoaiChuan || tenChuan.includes(tenLoaiChuan);
+    return DINH_DANH_THU_CHUYEN_DUNG.some(dinhDanh => {
+        const dinhDanhChuan = chuanHoaTenThuNgan(dinhDanh);
+        return tenChuan === dinhDanhChuan || tenChuan.includes(dinhDanhChuan);
     });
 }
 
@@ -708,13 +712,6 @@ async function taiDuLieuDuNo() {
         cotMaKH    = keys.find(k => k.toLowerCase().includes('mã kh') || k.toLowerCase().includes('ma kh'));
         cotTenKH   = keys.find(k => k.toLowerCase().includes('tên kh') || k.toLowerCase().includes('ten kh'));
 
-        if (cotTNV_global) {
-            records = records.filter(r => !laThuNganKhongThongKe(r[cotTNV_global]));
-        }
-        if (records.length === 0) {
-            document.getElementById('cap-nhat-luc-duno').innerHTML = `<span class="text-red-600 font-bold">Không còn dữ liệu sau khi bỏ Chuyên dùng và Bơm thủy nông.</span>`;
-            return;
-        }
         globalRecords = records;
 
         document.getElementById('cap-nhat-luc-duno').innerHTML = `<svg class="w-4 h-4 text-green-600 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Cập nhật lúc: <span class="font-bold text-evnDark ml-1">${json.cap_nhat_luc || '--'}</span>`;
@@ -1102,7 +1099,7 @@ function setupChuKyIn() {
 }
 
 // =========================================================
-// PHẦN SỬA ĐỔI: TỔNG HỢP NỢ THEO 2 TỔ SẢN XUẤT (VŨ THƯ)
+// PHẦN SỬA ĐỔI: TỔNG HỢP NỢ THEO 2 TỔ SẢN XUẤT VÀ THU CHUYÊN DÙNG (VŨ THƯ)
 // Phân tổ dựa theo MÃ THU NGÂN VIÊN (lấy từ file chia_tổ.txt)
 // =========================================================
 let dataTableTongHop = null;
@@ -1142,6 +1139,8 @@ const TEN_TO_2 = [
 // 2. Hàm phân loại tổ — so khớp tên TNV (không phân biệt hoa/thường)
 function layTenTo(tenTNV) {
     if (!tenTNV) return "";
+    if (laThuChuyenDung(tenTNV)) return "3. THU CHUYÊN DÙNG";
+
     // Chuẩn hóa: chữ thường, bỏ khoảng trắng thừa
     let tnvChuan = String(tenTNV).toLowerCase().trim().replace(/\s+/g, ' ');
 
@@ -1214,8 +1213,9 @@ function capNhatTabTongHop() {
                 startRender: function (rows, group) {
                     let totalHD = rows.data().pluck('soHD').reduce((a, b) => a + b, 0);
                     let totalTien = rows.data().pluck('tongTien').reduce((a, b) => a + b, 0);
+                    let tenNhomHienThi = group === "3. THU CHUYÊN DÙNG" ? "THU CHUYÊN DÙNG" : group;
                     // Style thanh tiêu đề nhóm giống file index.html
-                    return $('<tr/>').append('<td colspan="5" style="background-color: #e2e8f0; font-weight: 900; color: #002B54; border-top: 2px solid #94a3b8; border-bottom: 2px solid #94a3b8; padding: 10px !important;">' + group + ' — (Tổng: ' + rows.count() + ' NV | ' + totalHD + ' HĐ | ' + new Intl.NumberFormat('vi-VN').format(totalTien) + ' đ)</td>');
+                    return $('<tr/>').append('<td colspan="5" style="background-color: #e2e8f0; font-weight: 900; color: #002B54; border-top: 2px solid #94a3b8; border-bottom: 2px solid #94a3b8; padding: 10px !important;">' + tenNhomHienThi + ' — (Tổng: ' + rows.count() + ' NV | ' + totalHD + ' HĐ | ' + new Intl.NumberFormat('vi-VN').format(totalTien) + ' đ)</td>');
                 }
             },
             paging: false,
