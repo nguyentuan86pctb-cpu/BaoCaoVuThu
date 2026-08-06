@@ -591,6 +591,9 @@ let dataTableDuNo = null;
 let cotTNV_global = null, cotTien_global = null, cotTram_global = null, cotCot_global = null, cotSDT_global = null;
 let cotMaKH = null, cotTenKH = null;
 let nguongLocTien = 0; let mangCotHoanChinh = []; 
+let locChungSDT = false;
+let sdtChuanTheoBanGhi = new WeakMap();
+let tapSDTChung = new Set();
 
 $.fn.dataTable.ext.type.order['natural-asc'] = function (a, b) { return String(a).localeCompare(String(b), undefined, {numeric: true, sensitivity: 'base'}); };
 $.fn.dataTable.ext.type.order['natural-desc'] = function (a, b) { return String(b).localeCompare(String(a), undefined, {numeric: true, sensitivity: 'base'}); };
@@ -617,6 +620,22 @@ function dinhDangSoDienThoai(value) {
     if (!sdt || sdt === 'NaN' || sdt === 'null' || sdt === '--') return '';
     if (sdt.length >= 8 && !sdt.startsWith('0')) sdt = '0' + sdt;
     return sdt;
+}
+
+function taoChiMucSDT(records) {
+    const soLanXuatHien = new Map();
+    sdtChuanTheoBanGhi = new WeakMap();
+    tapSDTChung = new Set();
+
+    records.forEach(row => {
+        const sdt = dinhDangSoDienThoai(cotSDT_global ? row[cotSDT_global] : '');
+        sdtChuanTheoBanGhi.set(row, sdt);
+        if (sdt) soLanXuatHien.set(sdt, (soLanXuatHien.get(sdt) || 0) + 1);
+    });
+
+    soLanXuatHien.forEach((soLan, sdt) => {
+        if (soLan > 1) tapSDTChung.add(sdt);
+    });
 }
 
 function layDuLieuBaoCaoZalo(ma, fallback) {
@@ -711,6 +730,7 @@ async function taiDuLieuDuNo() {
         cotSDT_global  = keys.find(k => k.toLowerCase().includes('sdt') || k.toLowerCase().includes('điện thoại') || k.toLowerCase().includes('đt'));
         cotMaKH    = keys.find(k => k.toLowerCase().includes('mã kh') || k.toLowerCase().includes('ma kh'));
         cotTenKH   = keys.find(k => k.toLowerCase().includes('tên kh') || k.toLowerCase().includes('ten kh'));
+        taoChiMucSDT(records);
 
         globalRecords = records;
 
@@ -726,7 +746,7 @@ async function taiDuLieuDuNo() {
             });
         }
 
-        $('#sort-tram').prop('checked', false); $('#sort-cot').prop('checked', false); $('#sort-sdt').prop('checked', false);
+        $('#sort-tram').prop('checked', false); $('#sort-cot').prop('checked', false); $('#sort-sdt').prop('checked', false); locChungSDT = false;
         if (dataTableDuNo) { dataTableDuNo.destroy(); $('#bang-duno').empty(); }
         mangCotHoanChinh = keys; 
 
@@ -775,22 +795,20 @@ async function taiDuLieuDuNo() {
         ];
 
         dataTableDuNo = $('#bang-duno').DataTable({
-            data: globalRecords, columns: finalColumnsGlobal, pageLength: 50, lengthMenu: [[50, 100, 200, 500], [50, 100, 200, 1000]],
+            data: globalRecords, columns: finalColumnsGlobal, deferRender: true, pageLength: 50, lengthMenu: [[50, 100, 200, 500], [50, 100, 200, 1000]],
             language: { search: "Tìm kiếm:", lengthMenu: "Hiện _MENU_ dòng", info: "Dòng _START_–_END_ / Tổng _TOTAL_", zeroRecords: "Không tìm thấy dữ liệu phù hợp", paginate: { next: "Sau »", previous: "« Trước" } },
             createdRow: function(row, data) { let maKH = cotMaKH ? data[cotMaKH] : null; let maStr = String(maKH); if (dictGhiChu[maStr]) $(row).addClass('co-ghi-chu'); if (danhSachTickCache.has(maStr)) $(row).addClass('da-doc-no'); },
             scrollX: false, autoWidth: false, dom: '<"flex flex-col md:flex-row md:justify-between items-center mb-2 gap-2"lf>rt<"flex flex-col md:flex-row md:justify-between items-center mt-2 gap-2"ip>'
         });
 
-        $('#sort-tram').off('change').on('change', function() { if ($(this).is(':checked')) { $('#sort-cot').prop('checked', false); $('#sort-sdt').prop('checked', false); if (dataTableDuNo && cotTram_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc']]).draw(); } } else { if (dataTableDuNo) dataTableDuNo.order([[1, 'asc']]).draw(); } });
-        $('#sort-cot').off('change').on('change', function() { if ($(this).is(':checked')) { $('#sort-tram').prop('checked', true); $('#sort-sdt').prop('checked', false); if (dataTableDuNo && cotTram_global && cotCot_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc'], [4 + mangCotHoanChinh.indexOf(cotCot_global), 'asc']]).draw(); } } else { if (dataTableDuNo && cotTram_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc']]).draw(); } } });
-        $('#sort-sdt').off('change').on('change', function() { if ($(this).is(':checked')) { $('#sort-tram').prop('checked', false); $('#sort-cot').prop('checked', false); if (dataTableDuNo && cotSDT_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotSDT_global), 'desc']]).draw(); } } else { if (dataTableDuNo) dataTableDuNo.order([[1, 'asc']]).draw(); } });
+        $('#sort-tram').off('change').on('change', function() { if ($(this).is(':checked')) { $('#sort-cot').prop('checked', false); $('#sort-sdt').prop('checked', false); locChungSDT = false; if (dataTableDuNo && cotTram_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc']]).draw(); } } else { if (dataTableDuNo) dataTableDuNo.order([[1, 'asc']]).draw(); } });
+        $('#sort-cot').off('change').on('change', function() { if ($(this).is(':checked')) { $('#sort-tram').prop('checked', true); $('#sort-sdt').prop('checked', false); locChungSDT = false; if (dataTableDuNo && cotTram_global && cotCot_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc'], [4 + mangCotHoanChinh.indexOf(cotCot_global), 'asc']]).draw(); } } else { if (dataTableDuNo && cotTram_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc']]).draw(); } } });
+        $('#sort-sdt').off('change').on('change', function() { locChungSDT = $(this).is(':checked'); if (locChungSDT) { $('#sort-tram').prop('checked', false); $('#sort-cot').prop('checked', false); } if (dataTableDuNo) dataTableDuNo.order([]).draw(); });
 
         function capNhatMauSDT() {
             $('#bang-duno tbody tr').removeClass('chung-sdt');
-            if ($('#sort-sdt').is(':checked') && cotSDT_global) {
-                let dsSDT_Count = {};
-                dataTableDuNo.rows({ search: 'applied' }).every(function() { let sdt = this.data()[cotSDT_global]; if (sdt) { let c = String(sdt).replace(/\.0$/, '').trim(); if (c && c !== 'NaN' && c !== 'null') { if (c.length >= 8 && !c.startsWith('0')) c = '0' + c; dsSDT_Count[c] = (dsSDT_Count[c] || 0) + 1; } } });
-                dataTableDuNo.rows({ page: 'current' }).every(function() { let sdt = this.data()[cotSDT_global]; if (sdt) { let c = String(sdt).replace(/\.0$/, '').trim(); if (c && c !== 'NaN' && c !== 'null') { if (c.length >= 8 && !c.startsWith('0')) c = '0' + c; if (dsSDT_Count[c] > 1) $(this.node()).addClass('chung-sdt'); } } });
+            if (locChungSDT && cotSDT_global) {
+                dataTableDuNo.rows({ page: 'current' }).every(function() { const rowData = this.data(); const sdt = sdtChuanTheoBanGhi.get(rowData); if (sdt && tapSDTChung.has(sdt)) $(this.node()).addClass('chung-sdt'); });
             }
         }
 
@@ -834,8 +852,12 @@ async function taiDuLieuDuNo() {
         // Lọc cho Dư Nợ
         $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) { 
             if (settings.nTable.id !== 'bang-duno') return true; 
-            if (nguongLocTien === 0 || !cotTien_global) return true; 
-            let rowData = dataTableDuNo.row(dataIndex).data(); 
+            const rowData = globalRecords[dataIndex];
+            if (locChungSDT) {
+                const sdt = rowData ? sdtChuanTheoBanGhi.get(rowData) : '';
+                if (!sdt || !tapSDTChung.has(sdt)) return false;
+            }
+            if (nguongLocTien === 0 || !cotTien_global) return true;
             let val = parseFloat(String(rowData[cotTien_global]).replace(/\./g, '').replace(/,/g, '')) || 0; 
             return val >= nguongLocTien; 
         });
@@ -851,7 +873,7 @@ async function taiDuLieuDuNo() {
 
         function capNhatThongKe() { let filtered = dataTableDuNo.rows({ search: 'applied' }).data(); let sum = 0; filtered.each(function(v) { if (cotTien_global && v[cotTien_global]) sum += parseFloat(String(v[cotTien_global]).replace(/\./g, '').replace(/,/g, '')) || 0; }); $('#thong-ke-duno').removeClass('hidden'); $('#tong-hoa-don').text(new Intl.NumberFormat('vi-VN').format(filtered.length)); $('#tong-tien-no').text(new Intl.NumberFormat('vi-VN').format(sum) + ' đ'); }
         dataTableDuNo.on('draw', capNhatThongKe); dataTableDuNo.on('draw', capNhatMauSDT); capNhatThongKe(); capNhatMauSDT();
-        $('#filter-tnv').off('change').on('change', function() { if (cotTNV_global) { const val = $(this).val(); let idxCotTNV = finalColumnsGlobal.findIndex(c => c.data === cotTNV_global); if(idxCotTNV > -1) { dataTableDuNo.column(idxCotTNV).search(val ? '^' + $.fn.dataTable.util.escapeRegex(val) + '$' : '', true, false).draw(); } } });
+        $('#filter-tnv').off('change').on('change', function() { if (cotTNV_global) { const val = $(this).val(); let idxCotTNV = finalColumnsGlobal.findIndex(c => c.data === cotTNV_global); locChungSDT = false; $('#sort-sdt').prop('checked', false); if(idxCotTNV > -1) { dataTableDuNo.column(idxCotTNV).search(val ? '^' + $.fn.dataTable.util.escapeRegex(val) + '$' : '', true, false).draw(); } } });
     } catch (err) { document.getElementById('cap-nhat-luc-duno').innerHTML = `<span class="text-red-600 font-bold">Lỗi: ${err.message}</span>`; }
 }
 
