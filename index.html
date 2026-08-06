@@ -175,6 +175,8 @@ function khoiDongDangNhap() {
         table.dataTable tbody tr:hover { background-color: #eff6ff !important; }
         
         tr.chung-sdt td { background-color: #f3e6d5 !important; } 
+        tr.chung-sdt-nhom-chan td { background-color: #f3e6d5 !important; }
+        tr.chung-sdt-nhom-le td { background-color: #fff1df !important; }
         tr.co-ghi-chu td { background-color: #fee2e2 !important; } 
         tr.co-ghi-chu:hover td { background-color: #fecaca !important; } 
         tr.da-doc-no td { background-color: #dcfce7 !important; transition: background-color 0.2s; } 
@@ -595,6 +597,7 @@ let locChungSDT = false;
 let sdtChuanTheoBanGhi = new WeakMap();
 let tapSDTChung = new Set();
 let thuTuNhomSDT = new WeakMap();
+let thuTuBanDau = new WeakMap();
 
 $.fn.dataTable.ext.type.order['natural-asc'] = function (a, b) { return String(a).localeCompare(String(b), undefined, {numeric: true, sensitivity: 'base'}); };
 $.fn.dataTable.ext.type.order['natural-desc'] = function (a, b) { return String(b).localeCompare(String(a), undefined, {numeric: true, sensitivity: 'base'}); };
@@ -628,10 +631,12 @@ function taoChiMucSDT(records) {
     sdtChuanTheoBanGhi = new WeakMap();
     tapSDTChung = new Set();
     thuTuNhomSDT = new WeakMap();
+    thuTuBanDau = new WeakMap();
 
-    records.forEach(row => {
+    records.forEach((row, index) => {
         const sdt = dinhDangSoDienThoai(cotSDT_global ? row[cotSDT_global] : '');
         sdtChuanTheoBanGhi.set(row, sdt);
+        thuTuBanDau.set(row, index);
         if (sdt) soLanXuatHien.set(sdt, (soLanXuatHien.get(sdt) || 0) + 1);
     });
 
@@ -814,9 +819,20 @@ async function taiDuLieuDuNo() {
                     if (type === 'sort' || type === 'type') return thuTuNhomSDT.get(row) ?? Number.MAX_SAFE_INTEGER;
                     return '';
                 }
+            },
+            {
+                data: null,
+                visible: false,
+                searchable: false,
+                type: 'num',
+                render: function(data, type, row) {
+                    if (type === 'sort' || type === 'type') return thuTuBanDau.get(row) ?? Number.MAX_SAFE_INTEGER;
+                    return '';
+                }
             }
         ];
-        const chiSoCotNhomSDT = finalColumnsGlobal.length - 1;
+        const chiSoCotNhomSDT = finalColumnsGlobal.length - 2;
+        const chiSoCotBanDau = finalColumnsGlobal.length - 1;
 
         dataTableDuNo = $('#bang-duno').DataTable({
             data: globalRecords, columns: finalColumnsGlobal, deferRender: true, pageLength: 50, lengthMenu: [[50, 100, 200, 500], [50, 100, 200, 1000]],
@@ -827,12 +843,19 @@ async function taiDuLieuDuNo() {
 
         $('#sort-tram').off('change').on('change', function() { if ($(this).is(':checked')) { $('#sort-cot').prop('checked', false); $('#sort-sdt').prop('checked', false); locChungSDT = false; if (dataTableDuNo && cotTram_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc']]).draw(); } } else { if (dataTableDuNo) dataTableDuNo.order([[1, 'asc']]).draw(); } });
         $('#sort-cot').off('change').on('change', function() { if ($(this).is(':checked')) { $('#sort-tram').prop('checked', true); $('#sort-sdt').prop('checked', false); locChungSDT = false; if (dataTableDuNo && cotTram_global && cotCot_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc'], [4 + mangCotHoanChinh.indexOf(cotCot_global), 'asc']]).draw(); } } else { if (dataTableDuNo && cotTram_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc']]).draw(); } } });
-        $('#sort-sdt').off('change').on('change', function() { locChungSDT = $(this).is(':checked'); if (locChungSDT) { $('#sort-tram').prop('checked', false); $('#sort-cot').prop('checked', false); } if (dataTableDuNo) dataTableDuNo.order(locChungSDT ? [[chiSoCotNhomSDT, 'asc']] : []).draw(); });
+        $('#sort-sdt').off('change').on('change', function() { locChungSDT = $(this).is(':checked'); if (locChungSDT) { $('#sort-tram').prop('checked', false); $('#sort-cot').prop('checked', false); } if (dataTableDuNo) dataTableDuNo.order(locChungSDT ? [[chiSoCotNhomSDT, 'asc']] : [[chiSoCotBanDau, 'asc']]).draw(); });
 
         function capNhatMauSDT() {
-            $('#bang-duno tbody tr').removeClass('chung-sdt');
+            $('#bang-duno tbody tr').removeClass('chung-sdt chung-sdt-nhom-chan chung-sdt-nhom-le');
             if (locChungSDT && cotSDT_global) {
-                dataTableDuNo.rows({ page: 'current' }).every(function() { const rowData = this.data(); const sdt = sdtChuanTheoBanGhi.get(rowData); if (sdt && tapSDTChung.has(sdt)) $(this.node()).addClass('chung-sdt'); });
+                dataTableDuNo.rows({ page: 'current' }).every(function() {
+                    const rowData = this.data();
+                    const sdt = sdtChuanTheoBanGhi.get(rowData);
+                    if (sdt && tapSDTChung.has(sdt)) {
+                        const lopMau = (thuTuNhomSDT.get(rowData) % 2 === 0) ? 'chung-sdt-nhom-chan' : 'chung-sdt-nhom-le';
+                        $(this.node()).addClass(`chung-sdt ${lopMau}`);
+                    }
+                });
             }
         }
 
@@ -897,7 +920,7 @@ async function taiDuLieuDuNo() {
 
         function capNhatThongKe() { let filtered = dataTableDuNo.rows({ search: 'applied' }).data(); let sum = 0; filtered.each(function(v) { if (cotTien_global && v[cotTien_global]) sum += parseFloat(String(v[cotTien_global]).replace(/\./g, '').replace(/,/g, '')) || 0; }); $('#thong-ke-duno').removeClass('hidden'); $('#tong-hoa-don').text(new Intl.NumberFormat('vi-VN').format(filtered.length)); $('#tong-tien-no').text(new Intl.NumberFormat('vi-VN').format(sum) + ' đ'); }
         dataTableDuNo.on('draw', capNhatThongKe); dataTableDuNo.on('draw', capNhatMauSDT); capNhatThongKe(); capNhatMauSDT();
-        $('#filter-tnv').off('change').on('change', function() { if (cotTNV_global) { const val = $(this).val(); let idxCotTNV = finalColumnsGlobal.findIndex(c => c.data === cotTNV_global); locChungSDT = false; $('#sort-sdt').prop('checked', false); if(idxCotTNV > -1) { dataTableDuNo.order([]); dataTableDuNo.column(idxCotTNV).search(val ? '^' + $.fn.dataTable.util.escapeRegex(val) + '$' : '', true, false).draw(); } } });
+        $('#filter-tnv').off('change').on('change', function() { if (cotTNV_global) { const val = $(this).val(); let idxCotTNV = finalColumnsGlobal.findIndex(c => c.data === cotTNV_global); locChungSDT = false; $('#sort-sdt').prop('checked', false); if(idxCotTNV > -1) { dataTableDuNo.order([[chiSoCotBanDau, 'asc']]); dataTableDuNo.column(idxCotTNV).search(val ? '^' + $.fn.dataTable.util.escapeRegex(val) + '$' : '', true, false).draw(); } } });
     } catch (err) { document.getElementById('cap-nhat-luc-duno').innerHTML = `<span class="text-red-600 font-bold">Lỗi: ${err.message}</span>`; }
 }
 
