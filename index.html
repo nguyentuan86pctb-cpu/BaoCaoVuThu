@@ -577,21 +577,47 @@ function chuyenTab(tabName) {
 
 const STORAGE_KEY = 'evn_duno_ticks_vuthu';
 const STORAGE_NOTE_KEY = 'evn_duno_notes_vuthu';
+const STORAGE_TICK_BACKUP_KEY = `${STORAGE_KEY}_previous_month`;
 let danhSachTickCache = new Set(); 
 let dictGhiChu = {};
 
-function khoiTaoCacheTick() {
+function layKyThangHienTai() {
+    const homNay = new Date();
+    return `${homNay.getFullYear()}-${String(homNay.getMonth() + 1).padStart(2, '0')}`;
+}
+
+function docTrangThaiTickThangHienTai() {
     let data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    // B?n n?ng c?p: gi? tick ?? ??c n? b?n tr?n m?y, kh?ng t? x?a khi sang ng?y m?i.
+    const kyThangHienTai = layKyThangHienTai();
+
+    if (data.kyThang !== kyThangHienTai) {
+        if (Array.isArray(data.dsMaKH) && data.dsMaKH.length > 0) {
+            localStorage.setItem(STORAGE_TICK_BACKUP_KEY, JSON.stringify({
+                kyThang: data.kyThang || 'truoc-khi-nang-cap',
+                dsMaKH: data.dsMaKH,
+                saoLuuLuc: new Date().toISOString()
+            }));
+        }
+        data = { kyThang: kyThangHienTai, dsMaKH: [] };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    return data;
+}
+
+function khoiTaoCacheTick() {
+    let data = docTrangThaiTickThangHienTai();
     danhSachTickCache = new Set(data.dsMaKH || []);
     dictGhiChu = JSON.parse(localStorage.getItem(STORAGE_NOTE_KEY) || '{}');
 }
 
 function luuTrangThaiTick(maKH, isTick) {
     if (!maKH) return; let maStr = String(maKH);
+    let data = docTrangThaiTickThangHienTai();
+    danhSachTickCache = new Set(data.dsMaKH || []);
     if (isTick) danhSachTickCache.add(maStr); else danhSachTickCache.delete(maStr);
-    let data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    data.dsMaKH = Array.from(danhSachTickCache); localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    data.dsMaKH = Array.from(danhSachTickCache);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
 function luuGhiChu(maKH, noteText) {
