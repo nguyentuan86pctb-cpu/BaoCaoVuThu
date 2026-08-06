@@ -594,6 +594,7 @@ let nguongLocTien = 0; let mangCotHoanChinh = [];
 let locChungSDT = false;
 let sdtChuanTheoBanGhi = new WeakMap();
 let tapSDTChung = new Set();
+let thuTuNhomSDT = new WeakMap();
 
 $.fn.dataTable.ext.type.order['natural-asc'] = function (a, b) { return String(a).localeCompare(String(b), undefined, {numeric: true, sensitivity: 'base'}); };
 $.fn.dataTable.ext.type.order['natural-desc'] = function (a, b) { return String(b).localeCompare(String(a), undefined, {numeric: true, sensitivity: 'base'}); };
@@ -626,6 +627,7 @@ function taoChiMucSDT(records) {
     const soLanXuatHien = new Map();
     sdtChuanTheoBanGhi = new WeakMap();
     tapSDTChung = new Set();
+    thuTuNhomSDT = new WeakMap();
 
     records.forEach(row => {
         const sdt = dinhDangSoDienThoai(cotSDT_global ? row[cotSDT_global] : '');
@@ -633,8 +635,19 @@ function taoChiMucSDT(records) {
         if (sdt) soLanXuatHien.set(sdt, (soLanXuatHien.get(sdt) || 0) + 1);
     });
 
+    const danhSachSDTChung = [];
     soLanXuatHien.forEach((soLan, sdt) => {
-        if (soLan > 1) tapSDTChung.add(sdt);
+        if (soLan > 1) {
+            tapSDTChung.add(sdt);
+            danhSachSDTChung.push(sdt);
+        }
+    });
+
+    danhSachSDTChung.sort();
+    const thuTuTheoSDT = new Map(danhSachSDTChung.map((sdt, index) => [sdt, index]));
+    records.forEach(row => {
+        const sdt = sdtChuanTheoBanGhi.get(row);
+        thuTuNhomSDT.set(row, thuTuTheoSDT.get(sdt) ?? Number.MAX_SAFE_INTEGER);
     });
 }
 
@@ -791,8 +804,19 @@ async function taiDuLieuDuNo() {
                 data: null, title: 'CHI TIẾT', orderable: false, searchable: false, className: 'text-center w-16 align-top pt-3',
                 render: function() { return `<button class="btn-mo-rong bg-white border border-evnBlue text-evnBlue px-2 py-1 rounded text-[10px] font-bold hover:bg-evnBlue hover:text-white transition-colors w-full flex justify-center items-center gap-1 shadow-sm"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>XEM</button>`; }
             },
-            ...cotAnSearch
+            ...cotAnSearch,
+            {
+                data: null,
+                visible: false,
+                searchable: false,
+                type: 'num',
+                render: function(data, type, row) {
+                    if (type === 'sort' || type === 'type') return thuTuNhomSDT.get(row) ?? Number.MAX_SAFE_INTEGER;
+                    return '';
+                }
+            }
         ];
+        const chiSoCotNhomSDT = finalColumnsGlobal.length - 1;
 
         dataTableDuNo = $('#bang-duno').DataTable({
             data: globalRecords, columns: finalColumnsGlobal, deferRender: true, pageLength: 50, lengthMenu: [[50, 100, 200, 500], [50, 100, 200, 1000]],
@@ -803,7 +827,7 @@ async function taiDuLieuDuNo() {
 
         $('#sort-tram').off('change').on('change', function() { if ($(this).is(':checked')) { $('#sort-cot').prop('checked', false); $('#sort-sdt').prop('checked', false); locChungSDT = false; if (dataTableDuNo && cotTram_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc']]).draw(); } } else { if (dataTableDuNo) dataTableDuNo.order([[1, 'asc']]).draw(); } });
         $('#sort-cot').off('change').on('change', function() { if ($(this).is(':checked')) { $('#sort-tram').prop('checked', true); $('#sort-sdt').prop('checked', false); locChungSDT = false; if (dataTableDuNo && cotTram_global && cotCot_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc'], [4 + mangCotHoanChinh.indexOf(cotCot_global), 'asc']]).draw(); } } else { if (dataTableDuNo && cotTram_global) { dataTableDuNo.order([[4 + mangCotHoanChinh.indexOf(cotTram_global), 'asc']]).draw(); } } });
-        $('#sort-sdt').off('change').on('change', function() { locChungSDT = $(this).is(':checked'); if (locChungSDT) { $('#sort-tram').prop('checked', false); $('#sort-cot').prop('checked', false); } if (dataTableDuNo) dataTableDuNo.order([]).draw(); });
+        $('#sort-sdt').off('change').on('change', function() { locChungSDT = $(this).is(':checked'); if (locChungSDT) { $('#sort-tram').prop('checked', false); $('#sort-cot').prop('checked', false); } if (dataTableDuNo) dataTableDuNo.order(locChungSDT ? [[chiSoCotNhomSDT, 'asc']] : []).draw(); });
 
         function capNhatMauSDT() {
             $('#bang-duno tbody tr').removeClass('chung-sdt');
@@ -873,7 +897,7 @@ async function taiDuLieuDuNo() {
 
         function capNhatThongKe() { let filtered = dataTableDuNo.rows({ search: 'applied' }).data(); let sum = 0; filtered.each(function(v) { if (cotTien_global && v[cotTien_global]) sum += parseFloat(String(v[cotTien_global]).replace(/\./g, '').replace(/,/g, '')) || 0; }); $('#thong-ke-duno').removeClass('hidden'); $('#tong-hoa-don').text(new Intl.NumberFormat('vi-VN').format(filtered.length)); $('#tong-tien-no').text(new Intl.NumberFormat('vi-VN').format(sum) + ' đ'); }
         dataTableDuNo.on('draw', capNhatThongKe); dataTableDuNo.on('draw', capNhatMauSDT); capNhatThongKe(); capNhatMauSDT();
-        $('#filter-tnv').off('change').on('change', function() { if (cotTNV_global) { const val = $(this).val(); let idxCotTNV = finalColumnsGlobal.findIndex(c => c.data === cotTNV_global); locChungSDT = false; $('#sort-sdt').prop('checked', false); if(idxCotTNV > -1) { dataTableDuNo.column(idxCotTNV).search(val ? '^' + $.fn.dataTable.util.escapeRegex(val) + '$' : '', true, false).draw(); } } });
+        $('#filter-tnv').off('change').on('change', function() { if (cotTNV_global) { const val = $(this).val(); let idxCotTNV = finalColumnsGlobal.findIndex(c => c.data === cotTNV_global); locChungSDT = false; $('#sort-sdt').prop('checked', false); if(idxCotTNV > -1) { dataTableDuNo.order([]); dataTableDuNo.column(idxCotTNV).search(val ? '^' + $.fn.dataTable.util.escapeRegex(val) + '$' : '', true, false).draw(); } } });
     } catch (err) { document.getElementById('cap-nhat-luc-duno').innerHTML = `<span class="text-red-600 font-bold">Lỗi: ${err.message}</span>`; }
 }
 
