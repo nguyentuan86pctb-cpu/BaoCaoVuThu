@@ -223,10 +223,32 @@ function khoiDongDangNhap() {
             body.dang-in-thong-bao #vung-in-thong-bao { display: block !important; position: absolute; top: 0; left: 0; width: 100%; background: #fff; }
             body.dang-in-thong-bao #in-header, body.dang-in-thong-bao #vung-bang-in-tang-hinh { display: none !important; }
 
-            .trang-in-a4 { page-break-after: always; page-break-inside: avoid; width: 100%; height: 190mm; display: flex; flex-direction: row; box-sizing: border-box; font-family: 'Times New Roman', serif; color: #000; overflow: hidden; }
+            .trang-in-a4 { page-break-after: always; page-break-inside: avoid; width: 100%; height: 200mm; display: flex; flex-direction: row; box-sizing: border-box; font-family: 'Times New Roman', serif; color: #000; overflow: hidden; }
             .trang-in-a4:last-child { page-break-after: auto; }
-            .lien-thong-bao { width: 50%; height: 100%; padding: 6mm 10mm 48mm 10mm; display: block; position: relative; font-size: 12px; box-sizing: border-box; overflow: hidden; }
-            .lien-thong-bao > div:last-child > div:first-child { padding-top: 14px !important; box-sizing: border-box; }
+            .lien-thong-bao { width: 50%; height: 100%; padding: 4mm 7mm 3mm; display: flex; flex-direction: column; position: relative; font-size: 9.1pt; line-height: 1.13; box-sizing: border-box; overflow: hidden; }
+            .noi-dung-thong-bao { flex: 0 1 auto; min-height: 0; overflow: visible; }
+            .nhan-lien-thong-bao { margin: 0 0 1.5mm; font-size: 8pt; font-weight: bold; font-style: italic; }
+            .dau-thong-bao { display: grid; grid-template-columns: 42% 58%; column-gap: 3mm; margin-bottom: 2mm; text-align: center; }
+            .dau-thong-bao p { margin: 0; line-height: 1.15; }
+            .don-vi-cap-tren { font-size: 8.3pt; }
+            .ten-don-vi, .quoc-hieu, .tieu-ngu { font-weight: bold; }
+            .ten-don-vi, .tieu-ngu { display: inline-block; border-bottom: 0.6pt solid #000; padding-bottom: 0.5mm; }
+            .so-thong-bao, .ngay-thong-bao { margin-top: 1.2mm !important; }
+            .ngay-thong-bao { font-style: italic; text-align: right; padding-right: 2mm; }
+            .tieu-de-thong-bao { margin: 2mm 0 0.8mm; text-align: center; font-size: 11pt; font-weight: bold; line-height: 1.18; }
+            .ghi-chu-thong-bao { margin: 0 0 2.5mm; text-align: center; font-size: 8.7pt; font-style: italic; }
+            .thong-tin-khach-hang { margin-bottom: 2.2mm; }
+            .thong-tin-khach-hang p { margin: 0 0 0.8mm; line-height: 1.14; overflow-wrap: anywhere; }
+            .noi-dung-mau-moi p { margin: 0 0 1.25mm; text-align: justify; text-indent: 5mm; line-height: 1.13; }
+            .noi-dung-mau-moi p.khong-thut-dau { text-indent: 0; }
+            .vung-ky-thong-bao { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 4mm; flex: 1 0 31mm; min-height: 31mm; margin-top: 1mm; text-align: center; box-sizing: border-box; }
+            .vung-ky-thong-bao p { margin: 0; line-height: 1.13; }
+            .vung-ky-thong-bao .tieu-de-ky { font-weight: bold; }
+            .vung-ky-thong-bao .huong-dan-ky { font-size: 8.2pt; font-style: italic; }
+            .vung-ky-thong-bao .cot-ky-thong-bao { display: flex; flex-direction: column; min-width: 0; }
+            .vung-ky-thong-bao .ten-nguoi-ky { margin-top: auto; font-weight: bold; }
+            .vung-ky-thong-bao .dong-sdt-nguoi-gui, .vung-ky-thong-bao .dong-dem-sdt { min-height: 3.8mm; margin-top: 0.5mm; font-size: 8.2pt; line-height: 1.1; font-weight: bold; }
+            .vung-ky-thong-bao .gio-nhan { margin-top: 1mm; }
             .duong-cat-doc { border-left: 1px dashed #666; margin: 0; flex-shrink: 0; position: relative; align-self: stretch; }
             .duong-cat-doc::after { content: "\2702"; position: absolute; top: 50%; left: -9px; font-size: 18px; color: #666; background: #fff; padding: 5px 0; transform: translateY(-50%); }
         }
@@ -421,9 +443,10 @@ function khoiDongDangNhap() {
                     </div>
                     
                     <div class="flex flex-wrap items-center gap-3 border-b border-slate-100 pb-3 mt-2 bg-blue-50 p-3 rounded-lg border border-blue-100 shadow-sm">
-                        <div class="flex items-center gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
                             <span class="font-bold text-slate-700 text-xs uppercase">4. NGƯỜI GỬI:</span>
                             <input type="text" id="input-nguoi-gui" placeholder="Gõ tên thu ngân..." class="bg-white border border-slate-300 text-slate-700 font-bold px-2 py-1.5 rounded-lg shadow-sm focus:border-evnBlue outline-none text-xs md:text-sm w-36 border-l-4 border-l-blue-500">
+                            <input type="tel" id="input-sdt-nguoi-gui" placeholder="SĐT người gửi..." class="bg-white border border-slate-300 text-slate-700 font-bold px-2 py-1.5 rounded-lg shadow-sm focus:border-evnBlue outline-none text-xs md:text-sm w-36 border-l-4 border-l-blue-500">
                         </div>
                         <div class="w-px h-5 bg-slate-300 hidden md:block mx-1"></div>
                         <div class="flex items-center gap-2">
@@ -446,8 +469,9 @@ function khoiDongDangNhap() {
                         </div>
                         <div class="w-px h-5 bg-slate-300 hidden md:block mx-1"></div>
                         <div class="flex items-center gap-2">
-                            <span class="font-bold text-slate-700 text-xs uppercase text-red-600">7. NGÀY CẮT:</span>
+                            <span class="font-bold text-slate-700 text-xs uppercase text-red-600">7. THỜI ĐIỂM TẠM DỪNG:</span>
                             <input type="date" id="input-ngay-cat" class="bg-white border border-slate-300 text-slate-700 font-bold px-2 py-1.5 rounded-lg shadow-sm focus:border-evnBlue outline-none text-xs md:text-sm w-36 border-l-4 border-l-red-500" title="Bỏ trống sẽ tự cộng thêm 1 ngày so với Ngày In">
+                            <input type="time" id="input-gio-cat" class="bg-white border border-slate-300 text-slate-700 font-bold px-2 py-1.5 rounded-lg shadow-sm focus:border-evnBlue outline-none text-xs md:text-sm w-28 border-l-4 border-l-red-500" title="Bỏ trống sẽ để dòng giờ, phút chờ ghi tay">
                         </div>
                     </div>
 
@@ -1110,10 +1134,91 @@ function inBaoCaoDuNo() {
     window.print();
 }
 
-function taoFormLien(tenLien, ngayIn, data) {
-    return `<div class="lien-thong-bao"><div style="font-weight:bold; font-size:11px; font-style:italic; margin-bottom:4px;">${tenLien}</div><table style="width:100%; border:none; border-collapse:collapse; margin-bottom:6px;"><tr><td style="width:42%; vertical-align:top; text-align:center; border:none; padding:0 4px 0 0;"><div style="font-size:11px; font-weight:normal; line-height:1.3;">CÔNG TY ĐIỆN LỰC THÁI BÌNH</div><div style="font-size:12.5px; font-weight:bold; text-decoration:underline; line-height:1.3;">ĐIỆN LỰC VŨ THƯ</div></td><td style="width:58%; vertical-align:top; text-align:center; border:none; padding:0 0 0 4px;"><div style="font-size:11.5px; font-weight:bold; line-height:1.3;">CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</div><div style="font-size:11.5px; font-weight:bold; text-decoration:underline; font-style:italic; line-height:1.3;">Độc lập - Tự do - Hạnh phúc</div><div style="font-size:11px; font-style:italic; text-align:right; margin-top:2px;">Vũ Thư, ${ngayIn}</div></td></tr></table><div style="text-align:center; font-size:14px; font-weight:bold; margin:8px 0; line-height:1.4;">THÔNG BÁO THANH TOÁN TIỀN ĐIỆN,<br>THÔNG BÁO NGỪNG CẤP ĐIỆN</div><p style="margin:4px 0; font-size:12px; line-height:1.4;"><u><i>Kính gửi</i></u>: Ông (bà): <b>${data.ten} - ${data.sdt}</b></p><p style="margin:4px 0; font-size:12px; line-height:1.4;">Địa chỉ: <b>${data.diaChi}</b></p><p style="margin:4px 0; font-size:12px; line-height:1.4;">Số cột: <b>${data.cot}</b>, No: <b>${data.cto}</b>, Trạm: <b>${data.tram}</b>, Mã KH: <b>${data.maKH}</b></p><p style="text-align:justify; margin-top:6px; margin-bottom:0; line-height:1.4; font-size:12px;">&nbsp;&nbsp;&nbsp;&nbsp;- Căn cứ luật điện lực số 61/2024/QH15 đã được Quốc hội nước Cộng hoà xã hội chủ nghĩa Việt Nam thông qua ngày 30/11/2024;<br>&nbsp;&nbsp;&nbsp;&nbsp;- Căn cứ Quy định về điều kiện, trình tự ngừng, giảm mức cung cấp điện được ban hành kèm theo Thông tư số 04/2025/TT-BCT ngày 01/02/2025 của Bộ trưởng Bộ Công thương;<br>&nbsp;&nbsp;&nbsp;&nbsp;- Căn cứ Hợp đồng mua bán điện đã ký kết giữa hai bên, thông báo thanh toán tiền điện lần nhất và số dư nợ tiền điện tính đến ${ngayIn} là: <b>${data.tien} đồng</b> mà quý khách hàng chưa thanh toán mặc dù đã quá thời hạn thoả thuận.</p><p style="text-align:justify; margin-top:6px; margin-bottom:0; line-height:1.4; font-size:12px;">&nbsp;&nbsp;&nbsp;&nbsp;Điện lực Vũ Thư xin gửi tới Quý khách hàng giấy thông báo thanh toán tiền điện lần thứ 2 và đề nghị Quý khách hàng thu xếp để thanh toán cho chúng tôi số dư nợ tiền điện trước <b>${data.ngayHetHan}</b>. Nếu đến hết giờ làm việc ngày <b>${data.ngayHetHan}</b>, Quý khách hàng vẫn chưa thanh toán đầy đủ số tiền điện còn nợ, chúng tôi buộc phải thông báo để quý khách hàng được biết:</p><p style="text-align:justify; margin:4px 0; line-height:1.4; font-size:12px; padding-left:8px;">&nbsp;&nbsp;&nbsp;&nbsp;- <b>Điện Lực Vũ Thư sẽ tính lãi chậm trả và phạt vi phạm hợp đồng với mức phạt là 8% giá trị tiền điện phát sinh trong kỳ.</b><br>&nbsp;&nbsp;&nbsp;&nbsp;- Sau ngày ${data.ngayCat}, chúng tôi xin phép được tạm ngừng cấp điện cho Quý khách hàng.<br>&nbsp;&nbsp;&nbsp;&nbsp;- Lý do ngừng cấp điện: Do Quý Khách hàng chưa thanh toán tiền điện đúng thời hạn đã thoả thuận trong Hợp đồng.<br>&nbsp;&nbsp;&nbsp;&nbsp;- Thời hạn dự kiến đóng điện: Sau khi Quý khách đã thanh toán đầy đủ tiền điện; tiền lãi của số tiền chậm trả, phạt vi phạm hợp đồng và chi phí đóng, cắt điện.</p><p style="margin-top:6px; line-height:1.4; font-size:12px;">&nbsp;&nbsp;&nbsp;&nbsp;Đề nghị Quý khách hàng có kế hoạch chủ động trong thời gian mất điện trên.<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Xin trân trọng cảm ơn!</b></p><div style="position:absolute; bottom:5mm; left:10mm; right:10mm; display:flex; justify-content:space-between; text-align:center; height:100px;"><div style="width:32%; position:relative;"><p style="font-weight:bold; margin:0 0 2px 0; font-size:12px;">Người nhận thông báo</p><p style="font-style:italic; margin:0; font-size:11px;">(Ký và ghi rõ họ tên)</p></div><div style="width:32%; position:relative;"><p style="font-weight:bold; margin:0 0 2px 0; font-size:12px;">Người gửi thông báo</p><p style="font-weight:bold; margin:0; font-size:12px; position:absolute; bottom:0; width:100%;">${data.nguoiGui}</p></div><div style="width:32%; position:relative;"><p style="font-weight:bold; margin:0 0 2px 0; font-size:12px; line-height:1.2;">${data.tieuDeLanhDao}</p><p style="font-weight:bold; margin:0; font-size:12px; position:absolute; bottom:0; width:100%;">${data.lanhDao}</p></div></div></div>`;
+function thoatHtmlThongBao(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
 }
 
+function taoFormLien(tenLien, data) {
+    const ten = thoatHtmlThongBao(data.ten);
+    const sdt = thoatHtmlThongBao(data.sdt);
+    const diaChi = thoatHtmlThongBao(data.diaChi);
+    const maKH = thoatHtmlThongBao(data.maKH);
+    const cto = thoatHtmlThongBao(data.cto);
+    const cot = thoatHtmlThongBao(data.cot);
+    const tram = thoatHtmlThongBao(data.tram);
+    const tien = thoatHtmlThongBao(data.tien);
+    const nguoiGui = thoatHtmlThongBao(data.nguoiGui);
+    const sdtNguoiGui = thoatHtmlThongBao(data.sdtNguoiGui);
+    const lanhDao = thoatHtmlThongBao(data.lanhDao);
+    const gioCat = thoatHtmlThongBao(data.gioCat || '……');
+    const phutCat = thoatHtmlThongBao(data.phutCat || '……');
+
+    return `
+        <div class="lien-thong-bao">
+            <div class="noi-dung-thong-bao">
+                <p class="nhan-lien-thong-bao">${thoatHtmlThongBao(tenLien)}</p>
+                <div class="dau-thong-bao">
+                    <div>
+                        <p class="don-vi-cap-tren">CÔNG TY ĐIỆN LỰC THÁI BÌNH</p>
+                        <p class="ten-don-vi">ĐIỆN LỰC VŨ THƯ</p>
+                        <p class="so-thong-bao">Số: ……/TB-ĐLVT</p>
+                    </div>
+                    <div>
+                        <p class="quoc-hieu">CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+                        <p class="tieu-ngu">Độc lập - Tự do - Hạnh phúc</p>
+                        <p class="ngay-thong-bao">Vũ Thư, ${data.ngayIn}</p>
+                    </div>
+                </div>
+
+                <div class="tieu-de-thong-bao">THÔNG BÁO THANH TOÁN TIỀN ĐIỆN,<br>THÔNG BÁO NGỪNG CẤP ĐIỆN</div>
+                <p class="ghi-chu-thong-bao">(Nếu Quý khách hàng đã thanh toán, vui lòng bỏ qua giấy thông báo này!)</p>
+
+                <div class="thong-tin-khach-hang">
+                    <p>Kính gửi khách hàng: <b>${ten}</b> - SĐT: <b>${sdt}</b></p>
+                    <p>Địa chỉ sử dụng điện: <b>${diaChi}</b>, Mã khách hàng <b>${maKH}</b></p>
+                    <p>N0: <b>${cto}</b>, số cột: <b>${cot}</b>, TBA: <b>${tram}</b></p>
+                </div>
+
+                <div class="noi-dung-mau-moi">
+                    <p>Căn cứ khoản 1, khoản 2, Điều 49 của Luật Điện lực số 61/2024/QH15 được Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XV, kỳ họp thứ 8 thông qua ngày 30 tháng 11 năm 2024;</p>
+                    <p>Căn cứ Thông tư số 04/2025/TT-BCT ngày 01 tháng 02 năm 2025 của Bộ Công Thương quy định điều kiện, trình tự ngừng, giảm mức cung cấp điện;</p>
+                    <p>Căn cứ Hợp đồng mua bán điện đã ký kết giữa hai bên, thông báo thanh toán tiền điện lần thứ nhất và số dư nợ tiền điện tính đến ${data.ngayIn} là <b>${tien} đồng</b> mà Quý khách hàng chưa thanh toán.</p>
+                    <p>Điện lực Vũ Thư xin gửi tới Quý khách hàng Thông báo thanh toán tiền điện lần thứ 2 và đề nghị Quý khách hàng thu xếp thanh toán cho chúng tôi số dư nợ tiền điện trên, trước ${data.ngayHetHan}. Quý khách hàng có thể thanh toán qua ứng dụng EVNCSKH hoặc thanh toán qua ngân hàng, các tổ chức trung gian thu hộ tiền điện.</p>
+                    <p>Nếu đến hết giờ làm việc ${data.ngayIn}, Quý khách hàng vẫn chưa thanh toán đầy đủ số tiền điện còn nợ, chúng tôi buộc phải thông báo để Quý khách hàng được biết:</p>
+                    <p>Bắt đầu từ <b>${gioCat}</b> giờ <b>${phutCat}</b> phút ${data.ngayCat}, chúng tôi sẽ tạm ngừng cấp điện tại địa điểm công tơ đang bán điện cho Quý khách hàng.</p>
+                    <p><b>Lý do ngừng cấp điện:</b> Do Quý khách hàng chưa thanh toán tiền điện đúng thời hạn đã thỏa thuận trong Hợp đồng mua bán điện.</p>
+                    <p><b>Thời gian dự kiến đóng điện:</b> Sau khi Quý khách hàng đã thanh toán đầy đủ tiền điện, tiền lãi của số tiền chậm trả, tiền phạt vi phạm hợp đồng <b>8% giá trị vi phạm</b> và các chi phí liên quan (trừ trường hợp có thỏa thuận khác).</p>
+                    <p>Để tránh xảy ra những thiệt hại kinh tế không đáng có, đề nghị Quý khách hàng hoàn thành thanh toán trước thời hạn, lựa chọn các hình thức thanh toán tiền điện phù hợp và ưu tiên hình thức trích nợ tự động tiền điện qua ngân hàng. Trong thời gian tạm ngừng cấp điện do Quý khách hàng nợ tiền điện, bên bán điện sẽ không chịu trách nhiệm về những thiệt hại do việc ngừng cấp điện gây ra.</p>
+                    <p class="khong-thut-dau">Trân trọng cảm ơn!</p>
+                </div>
+            </div>
+
+            <div class="vung-ky-thong-bao">
+                <div>
+                    <p class="tieu-de-ky">Người nhận thông báo</p>
+                    <p class="huong-dan-ky">(Ký tên và ghi rõ họ tên,<br>ngày, giờ nhận TB)</p>
+                    <p class="gio-nhan">……giờ ……phút ngày……</p>
+                </div>
+                <div class="cot-ky-thong-bao">
+                    <p class="tieu-de-ky">Người gửi thông báo</p>
+                    <p class="huong-dan-ky">(Ký và ghi rõ họ tên)</p>
+                    <p class="ten-nguoi-ky">${nguoiGui}</p>
+                    <p class="dong-sdt-nguoi-gui">${sdtNguoiGui ? `SĐT: ${sdtNguoiGui}` : '&nbsp;'}</p>
+                </div>
+                <div class="cot-ky-thong-bao">
+                    <p class="tieu-de-ky">${data.tieuDeLanhDao}</p>
+                    <p class="huong-dan-ky">(Ký và ghi rõ họ tên)</p>
+                    <p class="ten-nguoi-ky">${lanhDao}</p>
+                    <p class="dong-dem-sdt">&nbsp;</p>
+                </div>
+            </div>
+        </div>`;
+}
 function inThongBaoTienDien() {
     if (!dataTableInTB) { alert("Bảng dữ liệu in chưa sẵn sàng!"); return; }
     
@@ -1134,6 +1239,7 @@ function inThongBaoTienDien() {
 
     // Lấy thông tin từ giao diện
     let nguoiGui = document.getElementById('input-nguoi-gui').value.trim();
+    let sdtNguoiGui = document.getElementById('input-sdt-nguoi-gui').value.trim();
     let lanhDao = document.getElementById('select-lanh-dao').value;
     let tieuDeLanhDao = (lanhDao === "Hoàng Mạnh Cường") 
                         ? "TRƯỞNG ĐIỆN LỰC" 
@@ -1143,6 +1249,7 @@ function inThongBaoTienDien() {
     let valNgayIn = document.getElementById('input-ngay-in').value;
     let valNgayHetHan = document.getElementById('input-ngay-het-han').value;
     let valNgayCat = document.getElementById('input-ngay-cat').value;
+    let valGioCat = document.getElementById('input-gio-cat').value;
     
     let dateIn = valNgayIn ? new Date(valNgayIn) : new Date(); // Mặc định là hôm nay
     let dateHetHan = valNgayHetHan ? new Date(valNgayHetHan) : new Date(dateIn.getTime()); // Mặc định bằng ngày in
@@ -1150,7 +1257,8 @@ function inThongBaoTienDien() {
     
     let strNgayIn = `ngày <span style="font-weight:bold;">${dateIn.getDate().toString().padStart(2,'0')}</span> tháng <span style="font-weight:bold;">${dateIn.getMonth() + 1}</span> năm <span style="font-weight:bold;">${dateIn.getFullYear()}</span>`;
     let strNgayHetHan = `ngày <span style="font-weight:bold;">${dateHetHan.getDate().toString().padStart(2,'0')}</span> tháng <span style="font-weight:bold;">${dateHetHan.getMonth() + 1}</span> năm <span style="font-weight:bold;">${dateHetHan.getFullYear()}</span>`;
-    let strNgayCat = `<b>${dateCat.getDate().toString().padStart(2,'0')}</b> tháng <b>${dateCat.getMonth() + 1}</b> năm <b>${dateCat.getFullYear()}</b>`;
+    let strNgayCat = `ngày <b>${dateCat.getDate().toString().padStart(2,'0')}</b> tháng <b>${dateCat.getMonth() + 1}</b> năm <b>${dateCat.getFullYear()}</b>`;
+    let [gioCat = '……', phutCat = '……'] = valGioCat ? valGioCat.split(':') : [];
     
     let htmlInAll = ''; 
     
@@ -1173,18 +1281,22 @@ function inThongBaoTienDien() {
             cto: cleanSo(docGiaTriTheoCot(rowData, ['so cto', 'so cong to', 'cto'])) || '--', 
             sdt: sdtClean, 
             tien: (cotTien_global ? rowData[cotTien_global] : docGiaTriTheoCot(rowData, ['tong tien', 'so tien', 'no'])) || '0',
-            nguoiGui: nguoiGui, 
+            nguoiGui: nguoiGui,
+            sdtNguoiGui: sdtNguoiGui,
             lanhDao: lanhDao, 
             tieuDeLanhDao: tieuDeLanhDao,
+            ngayIn: strNgayIn,
             ngayCat: strNgayCat,
-            ngayHetHan: strNgayHetHan
+            ngayHetHan: strNgayHetHan,
+            gioCat: gioCat,
+            phutCat: phutCat
         }; 
         
         htmlInAll += `
             <div class="trang-in-a4">
-                ${taoFormLien('Liên 2: Lưu Điện lực Vũ Thư', strNgayIn, pData)}
+                ${taoFormLien('Liên 2: Lưu Điện lực Vũ Thư', pData)}
                 <div class="duong-cat-doc"></div>
-                ${taoFormLien('Liên 1: Giao Khách Hàng', strNgayIn, pData)}
+                ${taoFormLien('Liên 1: Giao Khách Hàng', pData)}
             </div>`; 
     });
     
@@ -1202,11 +1314,14 @@ function inThongBaoTienDien() {
 
 function setupChuKyIn() {
     let savedNguoiGui = localStorage.getItem('evn_nguoi_gui_vt');
+    let savedSdtNguoiGui = localStorage.getItem('evn_sdt_nguoi_gui_vt');
     let savedLanhDao = localStorage.getItem('evn_lanh_dao_vt');
     if(savedNguoiGui) document.getElementById('input-nguoi-gui').value = savedNguoiGui;
+    if(savedSdtNguoiGui) document.getElementById('input-sdt-nguoi-gui').value = savedSdtNguoiGui;
     if(savedLanhDao) document.getElementById('select-lanh-dao').value = savedLanhDao;
 
     $('#input-nguoi-gui').on('input', function() { localStorage.setItem('evn_nguoi_gui_vt', this.value); });
+    $('#input-sdt-nguoi-gui').on('input', function() { localStorage.setItem('evn_sdt_nguoi_gui_vt', this.value); });
     $('#select-lanh-dao').on('change', function() { localStorage.setItem('evn_lanh_dao_vt', this.value); });
 }
 
